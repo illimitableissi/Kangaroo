@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Container = ({children}) => {
     return (
-        <div className="row">
+        <div className="container">
             {children}
         </div>
     );
