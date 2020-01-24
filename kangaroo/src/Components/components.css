@@ -14,8 +14,13 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
   }
 
   .card {
       margin: 10%
   }
+
+.jumbotron {
+    background-image: url("https://media.giphy.com/media/cnzP6PQAdT7Pv3aHU5/giphy.gif");
+}
