@@ -10,7 +10,7 @@ export const Container = ({children}) => {
 
 export const Row = ({children}) => {
     return (
-        <div className="row">
+        <div className="row text-center">
             {children}
         </div>
     );
