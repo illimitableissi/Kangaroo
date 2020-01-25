@@ -11,7 +11,7 @@ import Nav from './Components/Nav'
 function App() {
   return (
     <div className="App">
-      <br />
+      <Nav />
       <Parallax>
       <Jumbotron />
         <Container>
@@ -21,8 +21,6 @@ function App() {
           <Card img="/images/box.PNG" aos="fade-right"/>
         </ Container>
       </ Parallax>
-      
-
     </div>
   );
 }
