@@ -1,10 +1,10 @@
 import React from 'react';
-import Jumbotron from './Components/Jumbotron';
-import Parallax from './Components/Parallax';
-import {Container, Row, Column} from './Components/Grid';
-import Card from './Components/Card';
-import Images from './Components/Images'
-import Nav from './Components/Nav'
+import Jumbotron from '../Components/Jumbotron';
+import Parallax from '../Components/Parallax';
+import {Container, Row, Column} from '../Components/Grid';
+import Card from '../Components/Card';
+import Images from '../Components/Images'
+import Nav from '../Components/Nav'
 
 function HomePage() {
   return (
