@@ -16,9 +16,9 @@ export const Row = ({children}) => {
     );
 };
 
-export const Column = ({children}) => {
+export const Column = ({children, props}) => {
     return (
-        <div className="col">
+        <div className="col-sm">
             {children}
         </div>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import{Container, Row, Column} from './Grid'
 import '../addresses.json'
 
 const SearchForm = (props) => {
@@ -8,21 +7,21 @@ const SearchForm = (props) => {
             <form>
                 <div className="form-group">
                     <label for="location">Location?</label>
-                    <select className="form-control">
+                    <select className="form-control form-control-sm">
                         <option>{props.option}</option>
                     </select>
                 </div>
                 <div className="form-group">
                     <label for="price">Price?</label>
-                    <input className="form-control"></input>
+                    <input className="form-control form-control-sm"></input>
                 </div>
                 <div className="form-group">
                     <label for="rooms">Amount of Rooms?</label>
-                    <input className="form-control"></input>
+                    <input className="form-control form-control-sm"></input>
                 </div>
                  <div className="form-group">
-                    <label for="negotiable">Price Negotiabie?</label>
-                    <select className="form-control">
+                    <label for="negotiable">Price Negotiable?</label>
+                    <select className="form-control form-control-sm">
                         <option></option>
                         <option>Yes</option>
                         <option>No</option>
@@ -30,7 +29,7 @@ const SearchForm = (props) => {
                 </div>
                 <div className="form-group">
                     <label for="pets">Pet Friendly?</label>
-                    <select className="form-control">
+                    <select className="form-control form-control-sm">
                         <option></option>
                         <option>Yes</option>
                         <option>No</option>
