@@ -7,6 +7,8 @@ import {Container, Row, Column} from './Components/Grid';
 import Card from './Components/Card';
 import Images from './Components/Images'
 import Nav from './Components/Nav'
+import Landing from './Components/Landing'
+import Register from './Components/Register'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Card img="/images/box.PNG" aos="fade-right"/>
         </ Container>
       </ Parallax>
+      <Landing />
+      <Register />
     </div>
   );
 }
