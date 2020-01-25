@@ -35,13 +35,13 @@ render() {
       <div className="container">
         <div className="row">
           <div className="col">
-            <a to="/" className="btn btn-primary">Back to home</a>
+            <Link to="/" className="btn btn-primary">Back to home</Link>
             <div className="col" style={{ paddingLeft: "11.250px" }}>
               <h4>
                 <b>Register</b> below
               </h4>
               <p>
-                Already have an account? <a to="/login">Log in</a>
+                Already have an account? <Link to="/login">Log in</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>

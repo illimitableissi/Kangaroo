@@ -18,7 +18,7 @@ class Landing extends Component {
               </p>
               <br />
               <div className="col">
-                <a
+                <Link
                   to="/register"
                   style={{
                     width: "140px",
@@ -28,10 +28,10 @@ class Landing extends Component {
                   className="btn btn-primary"
                 >
                   Register
-                </a>
+                </Link>
               </div>
               <div className="col">
-                <a
+                <Link
                   to="/login"
                   style={{
                     width: "140px",
@@ -41,7 +41,7 @@ class Landing extends Component {
                   className="btn btn-secondary"
                 >
                   Log In
-                </a>
+                </Link>
               </div>
             </div>
           </div>

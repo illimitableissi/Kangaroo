@@ -6,7 +6,7 @@ class Nav extends React.Component {
     return (
       <div>
         <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand" href="/">Kangaroo</a>
+        <Link className="navbar-brand" to="/">Kangaroo</Link>
         <img src="/images/icon.PNG" width="30" height="30" className="d-inline-block align-top" alt="" />  
         </nav>
       </div>
