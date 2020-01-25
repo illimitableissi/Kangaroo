@@ -1,48 +1,82 @@
 [
     {
         "id": 1,
-        "location": "",
-        "price": "",
-        "amount-of-rooms": "",
-        "rent-range": "",
+        "location": "Sandy Springs",
+        "price": 900,
+        "amount-of-rooms": 1,
         "negotiable": true,
         "pet-friendly": false
     },
     {
         "id": 2,
-        "location": "",
-        "price": "",
-        "amount-of-rooms": "",
-        "rent-range": "",
+        "location": "Dunwoody",
+        "price": 1200,
+        "amount-of-rooms": 1,
         "negotiable": true,
-        "pet-friendly": false
+        "pet-friendly": true
       },
       {
         "id": 3,
-        "location": "",
-        "price": "",
-        "amount-of-rooms": "",
-        "rent-range": "",
-        "negotiable": true,
+        "location": "Smyrna",
+        "price": 1700,
+        "amount-of-rooms": 2,
+        "negotiable": false,
         "pet-friendly": false
       },
       {
         "id": 4,
-        "location": "",
-        "price": "",
-        "amount-of-rooms": "",
-        "rent-range": "",
-        "negotiable": true,
+        "location": "Brookhaven",
+        "price": 2000,
+        "amount-of-rooms": 3,
+        "negotiable": false,
         "pet-friendly": false
       },
-{
+      {
         "id": 5,
+        "location": "West Midtown",
+        "price": 1500,
+        "amount-of-rooms": 1,
+        "negotiable": true,
+        "pet-friendly": true
+      },
+      {
+        "id": 6,
         "location": "",
         "price": "",
         "amount-of-rooms": "",
-        "rent-range": "",
-        "negotiable": true,
-        "pet-friendly": false
-    }
-
+        "negotiable": "",
+        "pet-friendly": ""
+      },
+      {
+        "id": 7,
+        "location": "",
+        "price": "",
+        "amount-of-rooms": "",
+        "negotiable": "",
+        "pet-friendly": ""
+      },
+      {
+        "id": 8,
+        "location": "",
+        "price": "",
+        "amount-of-rooms": "",
+        "negotiable": "",
+        "pet-friendly": ""
+      },
+      {
+        "id": 9,
+        "location": "",
+        "price": "",
+        "amount-of-rooms": "",
+        "negotiable": "",
+        "pet-friendly": ""
+      },
+      {
+        "id": 10,
+        "location": "",
+        "price": "",
+        "amount-of-rooms": "",
+        "negotiable": "",
+        "pet-friendly": ""
+      }
 ]
