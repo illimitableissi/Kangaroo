@@ -10,7 +10,7 @@ const SearchResults = (props) => {
           <p className="card-text">Rooms:{props.rooms}</p>
           <p className="card-text">Negotiable:{props.negotiable}</p>
           <p className="card-text">Pet Friendly:{props.pets}</p>
-          <a href="#" className="btn btn-primary">Button</a>
+          <a href="#" className="btn btn-primary">Contact</a>
           </div>
         </div>
     );

@@ -11,6 +11,11 @@ const Search = () => {
                 <Row>
                     <Column>
                     <SearchForm />
+                    </Column>
+                    <Column>
+                    <SearchResults />
+                    <SearchResults />
+                    <SearchResults />
                     <SearchResults />
                     </Column>
                 </Row>
