@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "location": "",
+        "price": "",
+        "amount-of-rooms": "",
+        "rent-range": "",
+        "negotiable": true,
+        "pet-friendly": false
+    },
+    {
+        "id": 2,
+        "location": "",
+        "price": "",
+        "amount-of-rooms": "",
+        "rent-range": "",
+        "negotiable": true,
+        "pet-friendly": false
+      },
+      {
+        "id": 3,
+        "location": "",
+        "price": "",
+        "amount-of-rooms": "",
+        "rent-range": "",
+        "negotiable": true,
+        "pet-friendly": false
+      },
+      {
+        "id": 4,
+        "location": "",
+        "price": "",
+        "amount-of-rooms": "",
+        "rent-range": "",
+        "negotiable": true,
+        "pet-friendly": false
+      },
+{
+        "id": 5,
+        "location": "",
+        "price": "",
+        "amount-of-rooms": "",
+        "rent-range": "",
+        "negotiable": true,
+        "pet-friendly": false
+    }
+
+]
