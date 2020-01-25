@@ -1,10 +1,11 @@
 import React from 'react';
-import Nav from '../Components/Nav'
+import SearchForm from '../Components/SearchForm';
 
 const Search = () => {
     return (
         <div>
-            <Nav />
+            <SearchForm />
+            
 
             
         </div>
