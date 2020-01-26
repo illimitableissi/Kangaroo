@@ -1,5 +1,6 @@
 import React from 'react';
-import '../addresses.json'
+import '../addresses.json';
+import './components.css'
 
 const SearchForm = (props) => {
     return (
@@ -35,6 +36,7 @@ const SearchForm = (props) => {
                         <option>No</option>
                     </select>
                 </div>
+                <button type="button" class="btn btn-success">Filter</button>
             </form>
          </div>
     );
