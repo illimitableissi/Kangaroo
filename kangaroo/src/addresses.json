@@ -1,92 +1,101 @@
 [
-    {
-        "id": 1,
-        "location": "Sandy Springs",
-        "price": 900,
-        "amount-of-rooms": 1,
-        "negotiable": true,
-        "pet-friendly": false,
-        "address": ""
-    },
-    {
-        "id": 2,
-        "location": "Dunwoody",
-        "price": 1200,
-        "amount-of-rooms": 1,
-        "negotiable": true,
-        "pet-friendly": true,
-        "address": ""
-      },
-      {
-        "id": 3,
-        "location": "Smyrna",
-        "price": 1700,
-        "amount-of-rooms": 2,
-        "negotiable": false,
-        "pet-friendly": false,
-        "address": ""
-      },
-      {
-        "id": 4,
-        "location": "Brookhaven",
-        "price": 2000,
-        "amount-of-rooms": 3,
-        "negotiable": false,
-        "pet-friendly": false,
-        "address": ""
-      },
-      {
-        "id": 5,
-        "location": "West Midtown",
-        "price": 1500,
-        "amount-of-rooms": 1,
-        "negotiable": true,
-        "pet-friendly": true,
-        "address": ""
-      },
-      {
-        "id": 6,
-        "location": "",
-        "price": "",
-        "amount-of-rooms": "",
-        "negotiable": "",
-        "pet-friendly": "",
-        "address": ""
-      },
-      {
-        "id": 7,
-        "location": "",
-        "price": "",
-        "amount-of-rooms": "",
-        "negotiable": "",
-        "pet-friendly": "",
-        "address": ""
-      },
-      {
-        "id": 8,
-        "location": "",
-        "price": "",
-        "amount-of-rooms": "",
-        "negotiable": "",
-        "pet-friendly": "",
-        "address": ""
-      },
-      {
-        "id": 9,
-        "location": "",
-        "price": "",
-        "amount-of-rooms": "",
-        "negotiable": "",
-        "pet-friendly": "",
-        "address": ""
-      },
-      {
-        "id": 10,
-        "location": "",
-        "price": "",
-        "amount-of-rooms": "",
-        "negotiable": "",
-        "pet-friendly": "",
-        "address": "" 
-      }
+  {
+    "location": "Sandy Springs",
+    "price": 900,
+    "rooms": 1,
+    "sqft": 644,
+    "negotiable": true,
+    "pet-friendly": false,
+    "date-available": "July 1st, 2020",
+    "min-lease-by-month": 3,
+    "address": ""
+  },
+  {
+    "location": "Dunwoody",
+    "price": 1200,
+    "sqft": 765,
+    "rooms": 1,
+    "negotiable": true,
+    "pet-friendly": true,
+    "date-available": "March 1st, 2020",
+    "min-lease-by-month": 4,
+    "address": ""
+  },
+  {
+    "location": "Smyrna",
+    "price": 1700,
+    "rooms": 2,
+    "sqft": 1100,
+    "negotiable": false,
+    "pet-friendly": true,
+    "date-available": "February 12th, 2020",
+    "min-lease-by-month": 5,
+    "address": ""
+  },
+  {
+    "location": "Brookhaven",
+    "price": 2000,
+    "rooms": 3,
+    "sqft": 1723,
+    "negotiable": false,
+    "pet-friendly": false,
+    "date-available": "August 12th, 2020",
+    "min-lease-by-month": 2,
+    "address": ""
+  },
+  {
+    "location": "West Midtown",
+    "price": 1500,
+    "rooms": 1,
+    "sqft": 598,
+    "negotiable": true,
+    "pet-friendly": true,
+    "date-available": "May 1st, 2020",
+    "min-lease-by-month": 3,
+    "address": ""
+  },
+  {
+    "location": "North Druid Hills",
+    "rooms": 3,
+    "sqft": 1800,
+    "price": "2700",
+    "negotiable": false,
+    "pet-friendly": true,
+    "date-available": "March 1st, 2020",
+    "min-lease-by-month": 8,
+    "address": ""
+  },
+  {
+    "location": "West Midtown",
+    "rooms": 1,
+    "sqft": 634,
+    "price": 1100,
+    "negotiable": true,
+    "pet-friendly": true,
+    "date-available": "October 1st, 2020",
+    "min-lease-by-month": 6,
+    "address": ""
+  },
+  {
+    "location": "Buckhead",
+    "rooms": 1,
+    "sqft": 788,
+    "price": 1460,
+    "negotiable": true,
+    "pet-friendly": true,
+    "date-available": "January 25th, 2020",
+    "min-lease-by-month": 2,
+    "address": ""
+  },
+  {
+    "location": "Marietta",
+    "rooms": 2,
+    "sqft": 1289,
+    "price": 2065,
+    "negotiable": true,
+    "pet-friendly": true,
+    "date-available": "January 25th, 2020",
+    "min-lease-by-month": 3,
+    "address": ""
+  }
 ]
