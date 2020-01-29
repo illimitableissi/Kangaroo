@@ -11,34 +11,34 @@ const listingsSchema = new Schema({
         required: true
     },
     rooms: {
-        type: Number, 
+        type: Number,
         required: false
     },
     sqft: {
         type: Number,
         required: false
-    }, 
+    },
     negotiable: {
-        type: Boolean, 
+        type: Boolean,
         required: true
-    }, 
+    },
     petFriendly: {
-        type: Boolean, 
+        type: Boolean,
         required: true
-    }, 
+    },
     dateAvailable: {
-        type: Date,
+        type: String,
         required: true
-    }, 
+    },
     minLeaseByMonth: {
-        type: Number, 
+        type: Number,
         required: true
-    }, 
+    },
     address: {
-        type: String, 
+        type: String,
         required: true
     }
-    
+
     // location: "Sandy Springs",
     // price: 900,
     // rooms: 1,
@@ -49,4 +49,6 @@ const listingsSchema = new Schema({
     // minLeaseByMonth: 3,
     // address: ""
 });
-module.exports = User = mongoose.model("listings", listingsSchema);
+
+const listings = mongoose.model("listings", listingsSchema);
+module.exports = listings; 

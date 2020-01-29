@@ -4,7 +4,7 @@ const db = require("../models/listings");
 
 mongoose.connect(
     process.env.MONGODB_URI ||
-    "mongodb+srv://colingreen:cmgkpag118@kangaroodb-pgkex.mongodb.net/test"
+    "mongodb+srv://colingreen:cmgkpag118@kangaroodb-pgkex.mongodb.net/kangaroo"
 );
 
 const listingsSeed = [
@@ -22,8 +22,8 @@ const listingsSeed = [
     {
         location: "Dunwoody",
         price: 1200,
-        sqft: 765,
         rooms: 1,
+        sqft: 765,
         negotiable: true,
         petFriendly: true,
         dateAvailable: "March 1st, 2020",
@@ -65,9 +65,9 @@ const listingsSeed = [
     },
     {
         location: "North Druid Hills",
+        price: 2700,
         rooms: 3,
         sqft: 1800,
-        price: "2700",
         negotiable: false,
         petFriendly: true,
         dateAvailable: "March 1st, 2020",
@@ -76,9 +76,9 @@ const listingsSeed = [
     },
     {
         location: "West Midtown",
+        price: 1100,
         rooms: 1,
         sqft: 634,
-        price: 1100,
         negotiable: true,
         petFriendly: true,
         dateAvailable: "October 1st, 2020",
@@ -87,9 +87,9 @@ const listingsSeed = [
     },
     {
         location: "Buckhead",
+        price: 1460,
         rooms: 1,
         sqft: 788,
-        price: 1460,
         negotiable: true,
         petFriendly: true,
         dateAvailable: "January 25th, 2020",
@@ -98,9 +98,9 @@ const listingsSeed = [
     },
     {
         location: "Marietta",
+        price: 2065,
         rooms: 2,
         sqft: 1289,
-        price: 2065,
         negotiable: true,
         petFriendly: true,
         dateAvailable: "January 25th, 2020",
@@ -109,9 +109,9 @@ const listingsSeed = [
     }
 ];
 
-db.Book
+db.listings
     .remove({})
-    .then(() => db.Book.collection.insertMany(listingsSeed))
+    .then(() => db.listings.collection.insertMany(listingsSeed))
     .then(data => {
         console.log(data.result.n + " records inserted!");
         process.exit(0);
