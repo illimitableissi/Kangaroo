@@ -11,6 +11,9 @@ import Landing from './Components/Landing';
 import Register from './Components/Register';
 import Login from './Components/Login';
 
+import { Provider } from "react-redux";
+import store from "./store";
+
 // function App() {
 //   return (
 //     <div className="App">
@@ -34,14 +37,16 @@ import Login from './Components/Login';
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Nav />
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-        </div>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <Nav />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }
