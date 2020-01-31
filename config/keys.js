@@ -1,4 +1,4 @@
 module.exports = {
-    mongoURI: "mongodb+srv://colingreen:cmgkpag118@kangaroodb-pgkex.mongodb.net/test",
+    mongoURI: "mongodb://192.168.99.100:27017/kangaroo",
     secretOrKey: "secret"
   };

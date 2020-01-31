@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // Create Schema
-const listingsSchema = new Schema({
+const listingSchema = new Schema({
     location: {
         type: String,
         required: true
@@ -49,4 +49,7 @@ const listingsSchema = new Schema({
     // minLeaseByMonth: 3,
     // address: ""
 });
-module.exports = User = mongoose.model("listings", listingsSchema);
+
+const Listing = mongoose.model("Listing", listingSchema);
+
+module.exports = Listing;

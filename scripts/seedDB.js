@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
-const db = require("../models/listings");
+const db = require("../models");
 
 
 mongoose.connect(
     process.env.MONGODB_URI ||
-    "mongodb+srv://colingreen:cmgkpag118@kangaroodb-pgkex.mongodb.net/test"
+    "mongodb://192.168.99.100:27017/kangaroo"
 );
 
-const listingsSeed = [
+console.log("this works")
+
+const listingSeed = [
     {
         location: "Sandy Springs",
         price: 900,
@@ -109,9 +111,9 @@ const listingsSeed = [
     }
 ];
 
-db.Book
+db.Listing
     .remove({})
-    .then(() => db.Book.collection.insertMany(listingsSeed))
+    .then(() => db.Listing.collection.insertMany(listingSeed))
     .then(data => {
         console.log(data.result.n + " records inserted!");
         process.exit(0);
