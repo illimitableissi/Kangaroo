@@ -3,9 +3,32 @@ import SearchForm from '../Components/SearchForm';
 import {Container, Row, Column} from '../Components/Grid';
 import SearchResults from '../Components/SearchResults';
 import Nav from '../Components/Nav'
+import API from '../utils/API'
 
+class Search extends Component{
+    state = {
+        listings: [],
+        location= "",
+        price= "",
+        rooms= "",
+        negotiable ="",
+        pets="",
+};
 
-const Search = () => {
+componentDidMount() {
+    this.loadListings();
+  }
+
+    // Loads all books  and sets them to this.state.books
+loadListings = () => {
+ API.getListings()
+    .then(res =>
+    this.setState({ listings: res.data, location: "", price: "", rooms: "", negotiable: "", pets: "" })
+    )
+    .catch(err => console.log(err));
+};
+
+render () {
     return (
         <div>
             <Nav />
@@ -25,5 +48,7 @@ const Search = () => {
         </div>
     );
 };
+
+}
 
 export default Search;
