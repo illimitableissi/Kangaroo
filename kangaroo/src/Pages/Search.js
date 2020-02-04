@@ -38,6 +38,7 @@ loadListings = () => {
     this.setState({ listings: res.data, location: "", price: "", rooms: "", negotiable: "", pets: "" })
     )
     .catch(err => console.log(err));
+    
 };
 
 
@@ -49,11 +50,7 @@ render () {
             <Container>
                 <Row>
                     <Column>
-                        {this.state.listings.map(listing => {
-                        return (
-                    <SearchForm option={listing.location} />
-                            )
-                        })}
+                    <SearchForm />
                     </Column>
                     <Column>
                     <SearchResults />

@@ -8,7 +8,9 @@
     "start": "node server.js",
     "server": "node-env-run server --exec nodemon",
     "dev": "run-p server start",
-    "dual": "npm run start && npm run server"
+    "dual": "concurrently \"nodemon --ignore 'kangaroo/*'\" \"npm run kangaroo\"",
+    "seed": "node scripts/seedDB.js",
+    "kangaroo": "cd kangaroo && npm run start"
   },
   "repository": {
     "type": "git",
@@ -35,5 +37,5 @@
     "pino": "^5.16.0",
     "validator": "^12.1.0"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://localhost:5000"
 }
