@@ -16,7 +16,8 @@ const SearchResults = (props) => {
           <p className="card-text">Pet Friendly: {props.pets}</p>
           <p className="card-text">Address: {props.address}</p>
           </div>
-          <a href="#" className="btn btn-primary">Contact</a>
+          <br />          
+          <a href={props.link} className="btn btn-primary">Contact</a>
           </div>
         </div>
     );
