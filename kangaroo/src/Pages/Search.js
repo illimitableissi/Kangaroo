@@ -4,6 +4,7 @@ import {Container, Row, Column} from '../Components/Grid';
 import SearchResults from '../Components/SearchResults';
 import Nav from '../Components/Nav';
 import API from '../utils/API';
+import {Option} from '../Components/Option'
 
 class Search extends React.Component{
     state = {
@@ -53,7 +54,13 @@ render () {
             <Container>
                 <Row>
                     <Column>              
-                    <SearchForm />
+                    <SearchForm>
+                    {this.state.listings.map(listing => {
+                        return (
+                        <option>{listing.location}</option>
+                            );
+                    })};
+                    </SearchForm>
                     </Column>
                     <Column>
                     {this.state.listings.map(listing => {

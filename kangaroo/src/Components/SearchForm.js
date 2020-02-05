@@ -2,14 +2,14 @@ import React from 'react';
 import '../addresses.json';
 import './components.css'
 
-const SearchForm = (props) => {
+const SearchForm = ({children}) => {
     return (
         <div>
             <form>
                 <div className="form-group">
                     <label for="location">Location?</label>
                     <select className="form-control form-control-sm">
-                        <option>{props.option}</option>
+                        {children}
                     </select>
                 </div>
                 {/* <div className="form-group"> */}
