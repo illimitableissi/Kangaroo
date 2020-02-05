@@ -10,7 +10,14 @@ module.exports = {
   },
   findByLocation: function(req, res) {
     db.listings
-      .find(req.params.location)
+      .find(req.query)
+      .where('location').equals("Sandy Springs")
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  create: function(req, res) {
+    db.listings
+      .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

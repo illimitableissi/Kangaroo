@@ -26,7 +26,7 @@ componentDidMount() {
 ;
 
 loadListings = async () => {
-    const response = await fetch('/api/listings');
+    const response = await fetch('/api/listings/');
     const body = await response.json();
     this.setState({ listings: body});
     if (response.status !== 200) throw Error(body.message);
@@ -35,7 +35,7 @@ loadListings = async () => {
    };
   
 filter = () => {
-    this.loadListings()
+
 };
 
 render () {
@@ -49,13 +49,12 @@ render () {
                     {this.state.listings.map(listing => {
                         return (
                         <option>{listing.location}</option>
-                            );
+                            );                          
                     })};
                     </SearchForm>
-                    <FormBtn
-                        onClick={this.filter}
-                    >
-                    </FormBtn>
+                    <FormBtn 
+                    onClick={this.filter}
+                    />
                     </Column>
                     <Column>
                     {this.state.listings.map(listing => {
