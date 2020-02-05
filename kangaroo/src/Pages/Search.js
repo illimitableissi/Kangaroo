@@ -5,6 +5,7 @@ import SearchResults from '../Components/SearchResults';
 import Nav from '../Components/Nav';
 import API from '../utils/API';
 import {FormBtn} from '../Components/FormBtn';
+import Parallax from '../Components/Parallax'
 
 class Search extends React.Component{
     state = {
@@ -25,14 +26,6 @@ componentDidMount() {
   }
 ;
 
-// loadListings = async () => {
-//     const response = await fetch('/api/listings/');
-//     const body = await response.json();
-//     this.setState({ listings: body});
-//     if (response.status !== 200) throw Error(body.message);
-    
-//     return response;
-//    };
 
 loadListings = () => {
 API.getListings()
@@ -44,12 +37,18 @@ API.getListings()
 
   
 filter = () => {
-
+    API.getListing(this.props.match.params.location)
+    .then(res =>
+    this.setState({ listings: res.data})
+    )
+    .catch(err => console.log(err));
+    
 };
 
 render () {
     return (
         <div>
+            <Parallax>
             <Nav />
             <Container>
                 <Row>
@@ -57,33 +56,33 @@ render () {
                     <SearchForm>
                     {this.state.listings.map(listing => {
                         return (
-                        <option>{listing.location}</option>
-                            );                          
-                    })};
+                            <option>{listing.location}</option>
+                          
+                                );                          
+                            })};
                     </SearchForm>
-                    <FormBtn 
-                    onClick={this.filter}
-                    />
+                    <FormBtn />                  
                     </Column>
                     <Column>
                     {this.state.listings.map(listing => {
                         return (
-                    <SearchResults 
-                    location= {listing.location}
-                    price= {listing.price}
-                    rooms= {listing.rooms}
-                    negotiable= {listing.negotiable}
-                    pets = {listing.petFriendly}
-                    sqft = {listing.sqft}
-                    lease = {listing.minLeaseByMonth}
-                    address = {listing.address}
-                    moveIn = {listing.dateAvailable}
-                        />
-                    );
-                })}
+                            <SearchResults 
+                                location= {listing.location}
+                                price= {listing.price}
+                                rooms= {listing.rooms}
+                                negotiable= {listing.negotiable}
+                                pets = {listing.petFriendly}
+                                sqft = {listing.sqft}
+                                lease = {listing.minLeaseByMonth}
+                                address = {listing.address}
+                                moveIn = {listing.dateAvailable}
+                            />
+                            );
+                        })}
                     </Column>
                 </Row>
-            </Container>       
+            </Container>   
+            </Parallax>    
         </div>
     );
 };

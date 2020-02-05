@@ -17,7 +17,7 @@ module.exports = {
   findByLocation: function(req, res) {
     db.listings
       .find(req.query)
-      .where('location').equals("Sandy Springs")
+      .where("location").equals(req.params.location)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

@@ -2,8 +2,8 @@ import React from "react";
 
 export function FormBtn(props) {
   return (
-    <button {...props} className="btn btn-success">
+    <span className="btn btn-success" {...props} role="button" tableiIndex="0">
       Filter
-    </button>
+    </span>
   );
 }

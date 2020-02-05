@@ -7,7 +7,10 @@ getListings: function(){
 
 getListing: function(location){
     return axios.get("/api/listings/" + location);
-}
+},
 
+getId: function(id) {
+    return axios.get("/api/listings/" + id);
+},
     
 };
