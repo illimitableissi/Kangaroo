@@ -36,6 +36,5 @@
     "passport-jwt": "^4.0.0",
     "pino": "^5.16.0",
     "validator": "^12.1.0"
-  },
-  "proxy": "https://localhost:5000"
+  }
 }

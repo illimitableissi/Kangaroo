@@ -12,8 +12,8 @@ const SearchForm = (props) => {
                         <option>{props.option}</option>
                     </select>
                 </div>
-                <div className="form-group">
-                    <label for="price">Price?</label>
+                {/* <div className="form-group"> */}
+                    {/* <label for="price">Price?</label>
                     <input className="form-control form-control-sm"></input>
                 </div>
                 <div className="form-group">
@@ -35,7 +35,7 @@ const SearchForm = (props) => {
                         <option>Yes</option>
                         <option>No</option>
                     </select>
-                </div>
+                </div> */}
                 <button type="button" class="btn btn-success">Filter</button>
             </form>
          </div>

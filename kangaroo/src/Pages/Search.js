@@ -11,35 +11,38 @@ class Search extends React.Component{
         location: "",
         price: "",
         rooms: "",
+        moveIn: "",
         negotiable:"",
         pets:"",
+        address: "",
+        lease: "",
+        sqft: "",
 };
-
 
 componentDidMount() {
     this.loadListings();
   }
 ;
 
-callBackendAPI = async () => {
-    const response = await fetch('/express_backend');
+loadListings = async () => {
+    const response = await fetch('/api/listings');
     const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message) 
-    }
-    return body;
-  };
+    this.setState({ listings: body});
+    console.log(body);
+    console.log(this.state);
+    if (response.status !== 200) throw Error(body.message);
+    
+    return response;
+   };
   
     // Loads all books  and sets them to this.state.books
-loadListings = () => {
- API.getListings()
-    .then(res =>
-    this.setState({ listings: res.data, location: "", price: "", rooms: "", negotiable: "", pets: "" })
-    )
-    .catch(err => console.log(err));
-    
-};
+// loadListings = () => {
+//  API.getListings()
+//     .then(res =>
+//     this.setState({ listings: res.data })
+//     )
+//     .catch(err => console.log(err));
+// };
 
 
 
@@ -49,14 +52,25 @@ render () {
             <Nav />
             <Container>
                 <Row>
-                    <Column>
+                    <Column>              
                     <SearchForm />
                     </Column>
                     <Column>
-                    <SearchResults />
-                    <SearchResults />
-                    <SearchResults />
-                    <SearchResults />
+                    {this.state.listings.map(listing => {
+                        return (
+                    <SearchResults 
+                    location= {listing.location}
+                    price= {listing.price}
+                    rooms= {listing.rooms}
+                    negotiable= {listing.negotiable}
+                    pets = {listing.petFriendly}
+                    sqft = {listing.sqft}
+                    lease = {listing.minLeaseByMonth}
+                    address = {listing.address}
+                    moveIn = {listing.dateAvailable}
+                        />
+                    );
+                })}
                     </Column>
                 </Row>
             </Container>       

@@ -25,7 +25,3 @@ body, html {
     background-image: url("https://media.giphy.com/media/cnzP6PQAdT7Pv3aHU5/giphy.gif");
 }
 
-form {
-    position: fixed;
-    z-index: 1;
-}
