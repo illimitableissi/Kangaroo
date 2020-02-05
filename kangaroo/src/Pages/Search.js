@@ -25,14 +25,23 @@ componentDidMount() {
   }
 ;
 
-loadListings = async () => {
-    const response = await fetch('/api/listings/');
-    const body = await response.json();
-    this.setState({ listings: body});
-    if (response.status !== 200) throw Error(body.message);
+// loadListings = async () => {
+//     const response = await fetch('/api/listings/');
+//     const body = await response.json();
+//     this.setState({ listings: body});
+//     if (response.status !== 200) throw Error(body.message);
     
-    return response;
-   };
+//     return response;
+//    };
+
+loadListings = () => {
+API.getListings()
+    .then(res =>
+    this.setState({ listings: res.data})
+    )
+    .catch(err => console.log(err));
+    }
+
   
 filter = () => {
 
