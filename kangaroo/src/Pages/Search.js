@@ -4,7 +4,7 @@ import {Container, Row, Column} from '../Components/Grid';
 import SearchResults from '../Components/SearchResults';
 import Nav from '../Components/Nav';
 import API from '../utils/API';
-import {Option} from '../Components/Option'
+import {FormBtn} from '../Components/FormBtn';
 
 class Search extends React.Component{
     state = {
@@ -29,23 +29,14 @@ loadListings = async () => {
     const response = await fetch('/api/listings');
     const body = await response.json();
     this.setState({ listings: body});
-    console.log(body);
-    console.log(this.state);
     if (response.status !== 200) throw Error(body.message);
     
     return response;
    };
   
-    // Loads all books  and sets them to this.state.books
-// loadListings = () => {
-//  API.getListings()
-//     .then(res =>
-//     this.setState({ listings: res.data })
-//     )
-//     .catch(err => console.log(err));
-// };
-
-
+filter = () => {
+    this.loadListings()
+};
 
 render () {
     return (
@@ -61,6 +52,10 @@ render () {
                             );
                     })};
                     </SearchForm>
+                    <FormBtn
+                        onClick={this.filter}
+                    >
+                    </FormBtn>
                     </Column>
                     <Column>
                     {this.state.listings.map(listing => {

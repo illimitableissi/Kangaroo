@@ -36,7 +36,6 @@ const SearchForm = ({children}) => {
                         <option>No</option>
                     </select>
                 </div> */}
-                <button type="button" class="btn btn-success">Filter</button>
             </form>
          </div>
     );
