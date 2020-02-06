@@ -2,13 +2,16 @@ import React from 'react';
 import '../addresses.json';
 import './components.css'
 
-const SearchForm = ({children}) => {
+const SearchForm = ({children, handleChange}) => {
     return (
         <div>
             <form>
                 <div className="form-group">
                     <label for="location">Location?</label>
-                    <select className="form-control form-control-sm">
+                    <select 
+                        className="form-control form-control-sm"
+                        onChange={handleChange}
+                    >
                         {children}
                     </select>
                 </div>

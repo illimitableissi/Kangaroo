@@ -10,6 +10,7 @@ import Parallax from '../Components/Parallax'
 class Search extends React.Component{
     state = {
         listings: [],
+        filters: [],
         location: "",
         price: "",
         rooms: "",
@@ -22,27 +23,30 @@ class Search extends React.Component{
 };
 
 componentDidMount() {
-    this.loadListings();
-  }
-;
-
+     this.loadListings();
+}
 
 loadListings = () => {
-API.getListings()
-    .then(res =>
-    this.setState({ listings: res.data})
-    )
+    return API.getListings()
+    .then(res => {
+        this.setState({ 
+            listings: res.data,
+            filters: res.data.filter((thing, index, self) =>
+                index === self.findIndex((t) => ( t.location === thing.location
+                ))
+          )
+        })
+    })
     .catch(err => console.log(err));
     }
 
   
-filter = () => {
-    API.getListing(this.props.match.params.location)
-    .then(res =>
-    this.setState({ listings: res.data})
-    )
+filter = (location) => {
+    API.getListing(location)
+    .then(res => { 
+        this.setState({ listings: res.data });
+    })
     .catch(err => console.log(err));
-    
 };
 
 render () {
@@ -53,15 +57,11 @@ render () {
             <Container>
                 <Row>
                     <Column>              
-                    <SearchForm>
-                    {this.state.listings.map(listing => {
-                        return (
-                            <option>{listing.location}</option>
-                          
-                                );                          
-                            })};
-                    </SearchForm>
-                    <FormBtn />                  
+                    <SearchForm
+                        handleChange={(e) => this.filter(e.target.value)}
+                    >
+                    {this.state.filters.map(listing => <option>{listing.location}</option>)};
+                    </SearchForm>               
                     </Column>
                     <Column>
                     {this.state.listings.map(listing => {
