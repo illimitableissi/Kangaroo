@@ -17,7 +17,7 @@ function App() {
           <Route exact path="/user" component={LoggedIn} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/listing/:id" component={ListingDetail} />
-          <Route component={NoPage} />
+          {/* <Route component={NoPage} /> */}
       </div>
     </Router>
   );
