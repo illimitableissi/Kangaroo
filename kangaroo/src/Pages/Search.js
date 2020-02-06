@@ -6,32 +6,28 @@ import Nav from '../Components/Nav';
 import API from '../utils/API';
 import Parallax from '../Components/Parallax';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import Form from '../Components/Form'
 
-const MyVerticallyCenteredModal = (props) => {
+const MyVerticallyCenteredModal = ({ onClick, selectedCard, ...rest}) => {
     return (
       <Modal
-        {...props}
+        {...rest}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-          <Modal.Dialog>
-        <Modal.Header closeButton>
+    <Modal.Dialog>
+        <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+          Enter Your Contact Information
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
+          <Form />
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onClick}>Close</Button>
+          <Button onClick={onClick}>Close</Button>
         </Modal.Footer>
         </Modal.Dialog>
       </Modal>
@@ -51,7 +47,8 @@ class Search extends React.Component{
         address: "",
         lease: "",
         sqft: "",
-        show: false
+        show: false,
+        selectedCard: {} 
 };
 
 componentDidMount() {
@@ -81,8 +78,8 @@ filter = (location) => {
     .catch(err => console.log(err));
 };
 
-openModal = () => {
-    this.setState({show:true})
+openModal = (listing) => {
+    this.setState({show:true, selectedCard:listing})
 }
 
 closeModal = () => {
@@ -94,7 +91,9 @@ render () {
         <div>
             <MyVerticallyCenteredModal 
             show={this.state.show}
-            onClick={this.closeModal}/>
+            onClick={this.closeModal}
+            selectedCard={this.state.selectedCard}
+            />
             <Parallax>
             <Nav />
             <Container>
@@ -119,7 +118,10 @@ render () {
                                 lease = {listing.minLeaseByMonth}
                                 address = {listing.address}
                                 moveIn = {listing.dateAvailable}
-                                onClick={this.openModal}
+                                onClick={() => 
+                                    {
+                                        this.openModal(listing)
+                                    }}
                             />
                             );
                         })}

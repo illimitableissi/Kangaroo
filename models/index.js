@@ -1,5 +1,6 @@
 module.exports = {
     User: require("./User"),
-    listings: require("./listings")
+    listings: require("./listings"),
+    Message:  require("./Message")
   };
   
