@@ -4,8 +4,39 @@ import {Container, Row, Column} from '../Components/Grid';
 import SearchResults from '../Components/SearchResults';
 import Nav from '../Components/Nav';
 import API from '../utils/API';
-import {FormBtn} from '../Components/FormBtn';
-import Parallax from '../Components/Parallax'
+import Parallax from '../Components/Parallax';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button'
+
+const MyVerticallyCenteredModal = (props) => {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+          <Modal.Dialog>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Modal heading
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Centered Modal</h4>
+          <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+            consectetur ac, vestibulum at eros.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onClick}>Close</Button>
+        </Modal.Footer>
+        </Modal.Dialog>
+      </Modal>
+    );
+  }
 
 class Search extends React.Component{
     state = {
@@ -20,6 +51,7 @@ class Search extends React.Component{
         address: "",
         lease: "",
         sqft: "",
+        show: false
 };
 
 componentDidMount() {
@@ -49,9 +81,20 @@ filter = (location) => {
     .catch(err => console.log(err));
 };
 
+openModal = () => {
+    this.setState({show:true})
+}
+
+closeModal = () => {
+    this.setState({show:false})
+}
+  
 render () {
     return (
         <div>
+            <MyVerticallyCenteredModal 
+            show={this.state.show}
+            onClick={this.closeModal}/>
             <Parallax>
             <Nav />
             <Container>
@@ -76,7 +119,7 @@ render () {
                                 lease = {listing.minLeaseByMonth}
                                 address = {listing.address}
                                 moveIn = {listing.dateAvailable}
-                                link = {"/api/listings/" + listing._id}
+                                onClick={this.openModal}
                             />
                             );
                         })}

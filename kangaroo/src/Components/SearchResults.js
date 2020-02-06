@@ -17,7 +17,7 @@ const SearchResults = (props) => {
           <p className="card-text">Address: {props.address}</p>
           </div>
           <br />          
-          <a href={props.link} className="btn btn-primary">Contact</a>
+          <button className="btn btn-primary" onClick={props.onClick}>Contact</button>
           </div>
         </div>
     );
