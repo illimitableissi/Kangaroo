@@ -9,6 +9,7 @@ router.route("/location")
     .get(listingController.findByLocation);
 
 router.route("/location/:id/submit")
+    .get(listingController.findById)
     .post(listingController.update);
 
 router.route("/:id")

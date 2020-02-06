@@ -103,7 +103,7 @@ handleInputChange = e => {
 sendMessage = e => {
     e.preventDefault();
     if (this.state.fullName && this.state.email) {
-    API.contactLister ({
+    API.contact ({
         fullName: this.state.fullName,
         email: this.state.email,
         number: this.state.number
@@ -149,6 +149,7 @@ render () {
                                 lease = {listing.minLeaseByMonth}
                                 address = {listing.address}
                                 moveIn = {listing.dateAvailable}
+                                link={"/listing/" + listing._id}
                                 onClick={() => 
                                     {
                                         this.openModal(listing)

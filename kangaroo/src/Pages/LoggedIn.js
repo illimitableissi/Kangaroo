@@ -1,13 +1,21 @@
 import React from 'react';
-import Nav from '../Components/Nav'
+import Nav from '../Components/Nav';
+import API from '../utils/API'
 
-const LoggedIn = () => {
-    return (
+class LoggedIn extends React.Component {
+state = {
+    listing: {}
+};
+
+  render () {
+      return (
         <div>
             <Nav />
             
         </div>
     );
-};
+  }
+}
+
 
 export default LoggedIn;
