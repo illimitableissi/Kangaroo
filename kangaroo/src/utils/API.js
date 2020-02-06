@@ -12,5 +12,9 @@ getListing: function(location){
 getId: function(id) {
     return axios.get("/api/listings/" + id);
 },
+
+contactLister: function({ id, messageData }) {
+    return axios.post("/api/listings/location/" + id + "/submit", messageData)
+}
     
 };

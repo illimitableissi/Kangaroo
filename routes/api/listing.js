@@ -8,7 +8,11 @@ router.route("/")
 router.route("/location")
     .get(listingController.findByLocation);
 
+router.route("/location/:id/submit")
+    .post(listingController.update);
+
 router.route("/:id")
     .get(listingController.findById)
+    .put(listingController.update)
 
 module.exports = router;

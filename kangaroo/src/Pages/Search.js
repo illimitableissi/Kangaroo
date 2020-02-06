@@ -7,7 +7,8 @@ import API from '../utils/API';
 import Parallax from '../Components/Parallax';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import Form from '../Components/Form'
+import Form from '../Components/Form';
+// import Form from 'react-bootstrap/Form'
 
 const MyVerticallyCenteredModal = ({ onClick, selectedCard, ...rest}) => {
     return (
@@ -48,7 +49,12 @@ class Search extends React.Component{
         lease: "",
         sqft: "",
         show: false,
-        selectedCard: {} 
+        selectedCard: {},
+        messages: [],
+        fullName: "",
+        email: "",
+        number: "",
+
 };
 
 componentDidMount() {
@@ -56,7 +62,7 @@ componentDidMount() {
 }
 
 loadListings = () => {
-    return API.getListings()
+    API.getListings()
     .then(res => {
         this.setState({ 
             listings: res.data,
@@ -85,7 +91,29 @@ openModal = (listing) => {
 closeModal = () => {
     this.setState({show:false})
 }
-  
+
+handleInputChange = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+ 
+sendMessage = e => {
+    e.preventDefault();
+    if (this.state.fullName && this.state.email) {
+    API.contactLister ({
+        fullName: this.state.fullName,
+        email: this.state.email,
+        number: this.state.number
+    })
+    .then(res => this.load())
+    .catch(err => console.log(err));
+    }
+}
+
+
 render () {
     return (
         <div>
@@ -93,6 +121,9 @@ render () {
             show={this.state.show}
             onClick={this.closeModal}
             selectedCard={this.state.selectedCard}
+            sendMessage={this.sendMessage}
+            // onChange={this.handleInputChange}
+            value={this.state.fullName}
             />
             <Parallax>
             <Nav />

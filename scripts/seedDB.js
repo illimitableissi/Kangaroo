@@ -17,7 +17,8 @@ const listingsSeed = [
         petFriendly: false,
         dateAvailable: "July 1st, 2020",
         minLeaseByMonth: 3,
-        address: ""
+        address: "",
+        messages: []
     },
     {
         location: "Dunwoody",
@@ -28,7 +29,9 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "March 1st, 2020",
         minLeaseByMonth: 4,
-        address: ""
+        address: "",
+        messages: []
+        
     },
     {
         location: "Smyrna",
@@ -39,7 +42,8 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "February 12th, 2020",
         minLeaseByMonth: 5,
-        address: ""
+        address: "",
+        messages: []
     },
     {
         location: "Brookhaven",
@@ -50,7 +54,8 @@ const listingsSeed = [
         petFriendly: false,
         dateAvailable: "August 12th, 2020",
         minLeaseByMonth: 2,
-        address: ""
+        address: "",
+        messages: []
     },
     {
         location: "West Midtown",
@@ -61,7 +66,8 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "May 1st, 2020",
         minLeaseByMonth: 3,
-        address: ""
+        address: "",
+        messages: []
     },
     {
         location: "North Druid Hills",
@@ -72,7 +78,8 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "March 1st, 2020",
         minLeaseByMonth: 8,
-        address: ""
+        address: "",
+        messages: []
     },
     {
         location: "West Midtown",
@@ -83,7 +90,8 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "October 1st, 2020",
         minLeaseByMonth: 6,
-        address: ""
+        address: "",
+        messages: []
     },
     {
         location: "Buckhead",
@@ -94,7 +102,8 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "January 25th, 2020",
         minLeaseByMonth: 2,
-        address: ""
+        address: "",
+        messages: []
     },
     {
         location: "Marietta",
@@ -105,7 +114,8 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "January 25th, 2020",
         minLeaseByMonth: 3,
-        address: ""
+        address: "",
+        messages: []
     }
 ];
 
