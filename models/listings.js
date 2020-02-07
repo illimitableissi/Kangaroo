@@ -37,17 +37,13 @@ const listingsSchema = new Schema({
     address: {
         type: String,
         required: true
-    }
-
-    // location: "Sandy Springs",
-    // price: 900,
-    // rooms: 1,
-    // sqft: 644,
-    // negotiable: true,
-    // petFriendly: false,
-    // dateAvailable: "July 1st, 2020",
-    // minLeaseByMonth: 3,
-    // address: ""
+    },
+    messages: [{
+        fullName: String,
+        email: String,
+        phoneNumber: String,
+        posted: {type: Date, default: Date.now}
+    }]
 });
 
 const listings = mongoose.model("listings", listingsSchema);

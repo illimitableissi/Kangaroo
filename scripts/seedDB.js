@@ -18,7 +18,8 @@ const listingsSeed = [
         dateAvailable: "July 1st, 2020",
         minLeaseByMonth: 3,
         address: "",
-        messages: []
+        messages: [],
+        images: []
     },
     {
         location: "Dunwoody",

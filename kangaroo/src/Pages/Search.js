@@ -53,7 +53,7 @@ class Search extends React.Component{
         messages: [],
         fullName: "",
         email: "",
-        number: "",
+        phoneNumber: "",
         id:"",
 
 };
@@ -106,11 +106,11 @@ sendMessage = (e) => {
     e.preventDefault();
     if (this.state.fullName && this.state.email) {
     API.contact ( 
-        this.state.id,
+        this.state.id, 
         {
         fullName: this.state.fullName,
         email: this.state.email,
-        number: this.state.number
+        phoneNumber: this.state.phoneNumber
     })
     .then(res => this.loadListings())
     .catch(err => console.log(err));  
@@ -152,13 +152,16 @@ render () {
                 </Form.Group>
                 <Form.Group controlId="phoneNumber">
                     <Form.Label>Phone Number</Form.Label>
-                    <Form.Control type="text" 
-                    placeholder="(xxx) xxx-xxxx"
-                    name="number"
+                    <Form.Control 
+                    type="text" 
+                    placeholder="xxx-xxx-xxxx"
+                    name="phoneNumber"
                     onChange={this.handleInputChange} 
-                    value={this.state.number} />
+                    value={this.state.phoneNumber} />
                 </Form.Group>
-                    <Button variant="primary" type="submit" onClick={this.sendMessage}>
+                    <Button variant="primary" type="submit"
+                    disabled={!(this.state.fullName && this.state.email)}
+                    onClick={this.sendMessage}>
                         Submit
                      </Button>
             </Form>

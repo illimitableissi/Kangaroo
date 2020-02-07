@@ -12,7 +12,7 @@ const MessageSchema = new Schema({
   },
    phoneNumber: {
     type: Number,
-    required: true
+    required: false
   },
   date: {
     type: Date,
