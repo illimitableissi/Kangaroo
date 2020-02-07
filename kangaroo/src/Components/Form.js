@@ -6,7 +6,7 @@ const Form = ({props, handleInputChange, value, disabled}) => {
     <form>
   <div className="form-group">
   <label for="name">Full Name</label>
-    <input type="text" className="form-control" id="InputName" onChange={handleInputChange} value={value} />
+    <input type="text" className="form-control" id="InputName" onChange={handleInputChange}>{props.fullName}</input>
   </div>
   <div className="form-group">
     <label for="email">Email address</label>

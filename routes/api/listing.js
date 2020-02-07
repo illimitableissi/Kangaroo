@@ -14,6 +14,6 @@ router.route("/location/:id/submit")
 
 router.route("/:id")
     .get(listingController.findById)
-    .put(listingController.update)
+    .post(listingController.update)
 
 module.exports = router;

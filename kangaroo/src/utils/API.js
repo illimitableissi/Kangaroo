@@ -13,8 +13,8 @@ getId: function(id) {
     return axios.get("/api/listings/" + id);
 },
 
-contact: function({id, messageData}) {
-    return axios.put("/api/listings/" + id, messageData);
+contact: function(id, messageData) {
+    return axios.post("/api/listings/" + id, messageData);
 },
 
 contactLister: function({ id, messageData }) {

@@ -7,7 +7,8 @@ import API from '../utils/API';
 import Parallax from '../Components/Parallax';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import Form from '../Components/Form';
+// import Form from '../Components/Form';
+import Form from 'react-bootstrap/Form'
 
 const MyVerticallyCenteredModal = ({ children, onClick, selectedCard, ...rest}) => {
     return (
@@ -53,6 +54,7 @@ class Search extends React.Component{
         fullName: "",
         email: "",
         number: "",
+        id:"",
 
 };
 
@@ -84,7 +86,7 @@ filter = (location) => {
 };
 
 openModal = (listing) => {
-    this.setState({show:true, selectedCard:listing})
+    this.setState({show:true, selectedCard:listing, id:listing._id})
 }
 
 closeModal = () => {
@@ -96,20 +98,25 @@ handleInputChange = e => {
     this.setState({
       [name]: value
     });
+    console.log(value)
   };
 
  
-sendMessage = e => {
+sendMessage = (e) => {
     e.preventDefault();
     if (this.state.fullName && this.state.email) {
-    API.contact ({
+    API.contact ( 
+        this.state.id,
+        {
         fullName: this.state.fullName,
         email: this.state.email,
         number: this.state.number
     })
-    .then(res => this.load())
-    .catch(err => console.log(err));
+    .then(res => this.loadListings())
+    .catch(err => console.log(err));  
     }
+    this.setState({show:false})
+    console.log("this works")
 }
 
 
@@ -121,9 +128,40 @@ render () {
             onClick={this.closeModal}
             selectedCard={this.state.selectedCard}
             >
-            <Form 
-
-            />
+            <Form>
+                <Form.Group controlId="name">
+                  <Form.Label>Enter Full Name</Form.Label>
+                    <Form.Control
+                    type="text" 
+                    name="fullName"
+                    placeholder="Full Name"  
+                    onChange={this.handleInputChange} 
+                    value={this.state.fullName}/>
+                </Form.Group>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control 
+                    type="email" 
+                    name="email"
+                    placeholder="Enter email" 
+                    onChange={this.handleInputChange} 
+                    value={this.state.email}/>
+                    <Form.Text className="text-muted">
+                        We'll never share your email with anyone else.
+                    </Form.Text>
+                </Form.Group>
+                <Form.Group controlId="phoneNumber">
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control type="text" 
+                    placeholder="(xxx) xxx-xxxx"
+                    name="number"
+                    onChange={this.handleInputChange} 
+                    value={this.state.number} />
+                </Form.Group>
+                    <Button variant="primary" type="submit" onClick={this.sendMessage}>
+                        Submit
+                     </Button>
+            </Form>
             </MyVerticallyCenteredModal>
             <Parallax>
             <Nav />
