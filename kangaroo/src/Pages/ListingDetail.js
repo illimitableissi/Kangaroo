@@ -1,8 +1,8 @@
 import React from 'react';
 import Nav from '../Components/Nav'
-import Parallax from "../Components/Parallax";
 import API from '../utils/API';
 import Carousel from 'react-bootstrap/Carousel'
+import Card from 'react-bootstrap/Card'
 
 class ListingDetail extends React.Component {
     state = {
@@ -31,7 +31,7 @@ class ListingDetail extends React.Component {
                         <img
                         className="d-block w-100"
                         src="/images/interior.jpg"
-                        alt="Third slide"
+                        alt="Second slide"
                         />
                     </Carousel.Item>
                     <Carousel.Item>
@@ -45,10 +45,19 @@ class ListingDetail extends React.Component {
                         <img
                         className="d-block w-100"
                         src="/images/insideApartment.jpg"
-                        alt="Third slide"
+                        alt="Fourth slide"
                         />
                      </Carousel.Item>
-                </Carousel>                 
+                </Carousel>
+                <Card className="bg-dark text-white">
+                    <Card.Img src="holder.js/100px270" alt="Card image" />
+                        <Card.ImgOverlay>
+                            <Card.Title>Property Information</Card.Title>
+                                <Card.Text>
+                                </Card.Text>
+    <                               Card.Text>Last updated 3 mins ago</Card.Text>
+                        </Card.ImgOverlay>
+                </Card>                 
                 <h1>{this.state.listing.location}</h1>
                 <a href="/search" role="button" className="btn btn-danger">Go Back</a>
             </div>  
