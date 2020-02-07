@@ -8,9 +8,8 @@ import Parallax from '../Components/Parallax';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from '../Components/Form';
-// import Form from 'react-bootstrap/Form'
 
-const MyVerticallyCenteredModal = ({ onClick, selectedCard, ...rest}) => {
+const MyVerticallyCenteredModal = ({ children, onClick, selectedCard, ...rest}) => {
     return (
       <Modal
         {...rest}
@@ -25,7 +24,7 @@ const MyVerticallyCenteredModal = ({ onClick, selectedCard, ...rest}) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form />
+            {children}
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={onClick}>Close</Button>
@@ -121,10 +120,11 @@ render () {
             show={this.state.show}
             onClick={this.closeModal}
             selectedCard={this.state.selectedCard}
-            sendMessage={this.sendMessage}
-            // onChange={this.handleInputChange}
-            value={this.state.fullName}
+            >
+            <Form 
+
             />
+            </MyVerticallyCenteredModal>
             <Parallax>
             <Nav />
             <Container>

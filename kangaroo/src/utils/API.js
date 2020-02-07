@@ -13,12 +13,17 @@ getId: function(id) {
     return axios.get("/api/listings/" + id);
 },
 
-contact: function(id) {
-    return axios.put("/api/listings/" + id);
+contact: function({id, messageData}) {
+    return axios.put("/api/listings/" + id, messageData);
 },
 
 contactLister: function({ id, messageData }) {
     return axios.post("/api/listings/location/" + id + "/submit", messageData)
+},
+
+createListing: function(listingData) {
+    return axios.post("/api/listings", listingData);
+
 }
     
 };
