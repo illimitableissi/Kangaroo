@@ -19,7 +19,8 @@ const listingsSeed = [
         minLeaseByMonth: 3,
         address: "",
         messages: [],
-        images: []
+        image: "",
+        propertyDetails: ""
     },
     {
         location: "Dunwoody",
@@ -31,7 +32,9 @@ const listingsSeed = [
         dateAvailable: "March 1st, 2020",
         minLeaseByMonth: 4,
         address: "",
-        messages: []
+        messages: [],
+        image: "",
+        propertyDetails: ""
         
     },
     {
@@ -44,7 +47,9 @@ const listingsSeed = [
         dateAvailable: "February 12th, 2020",
         minLeaseByMonth: 5,
         address: "",
-        messages: []
+        messages: [],
+        image: "",
+        propertyDetails: ""
     },
     {
         location: "Brookhaven",
@@ -56,7 +61,9 @@ const listingsSeed = [
         dateAvailable: "August 12th, 2020",
         minLeaseByMonth: 2,
         address: "",
-        messages: []
+        messages: [],
+        image: "",
+        propertyDetails: ""
     },
     {
         location: "West Midtown",
@@ -68,7 +75,9 @@ const listingsSeed = [
         dateAvailable: "May 1st, 2020",
         minLeaseByMonth: 3,
         address: "",
-        messages: []
+        messages: [],
+        image: "",
+        propertyDetails: ""
     },
     {
         location: "North Druid Hills",
@@ -80,7 +89,9 @@ const listingsSeed = [
         dateAvailable: "March 1st, 2020",
         minLeaseByMonth: 8,
         address: "",
-        messages: []
+        messages: [],
+        image: "",
+        propertyDetails: ""
     },
     {
         location: "West Midtown",
@@ -92,7 +103,9 @@ const listingsSeed = [
         dateAvailable: "October 1st, 2020",
         minLeaseByMonth: 6,
         address: "",
-        messages: []
+        messages: [],
+        image: "",
+        propertyDetails: ""
     },
     {
         location: "Buckhead",
@@ -104,7 +117,9 @@ const listingsSeed = [
         dateAvailable: "January 25th, 2020",
         minLeaseByMonth: 2,
         address: "",
-        messages: []
+        messages: [],
+        image: "",
+        propertyDetails: ""
     },
     {
         location: "Marietta",
@@ -116,7 +131,9 @@ const listingsSeed = [
         dateAvailable: "January 25th, 2020",
         minLeaseByMonth: 3,
         address: "",
-        messages: []
+        messages: [],
+        image: "",
+        propertyDetails: ""
     }
 ];
 

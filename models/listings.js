@@ -43,7 +43,15 @@ const listingsSchema = new Schema({
         email: String,
         phoneNumber: String,
         posted: {type: Date, default: Date.now}
-    }]
+    }],
+    image: {
+        type: String,
+        required: false
+    },
+    propertyDetails: {
+        type: String,
+        required: false
+    }
 });
 
 const listings = mongoose.model("listings", listingsSchema);

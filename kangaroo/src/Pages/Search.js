@@ -181,14 +181,11 @@ render () {
                     {this.state.listings.map(listing => {
                         return (
                             <SearchResults 
+                                image={listing.image}
                                 location= {listing.location}
                                 price= {listing.price}
                                 rooms= {listing.rooms}
-                                negotiable= {listing.toString()}
-                                pets = {listing.petFriendly.toString()}
                                 sqft = {listing.sqft}
-                                lease = {listing.minLeaseByMonth}
-                                address = {listing.address}
                                 moveIn = {listing.dateAvailable}
                                 link={"/listing/" + listing._id}
                                 onClick={() => 
