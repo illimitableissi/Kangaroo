@@ -14,6 +14,16 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  listings: {
+    type: Array,
+    default: [],
+    required: true
+  },
+  messages: {
+    type: Array,
+    default: [],
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now
