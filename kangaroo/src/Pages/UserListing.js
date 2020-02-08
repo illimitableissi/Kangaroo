@@ -1,18 +1,18 @@
 import React from 'react';
 import API from '../utils/API'
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
-class User extends React.Component{
+class UserListing extends React.Component{
 
 state={
-    listings: [],
-    filters: [],
+    createdlisting: [],
     location: "",
     price: "",
     rooms: "",
     sqft: "",
-    negotiable: true,
-    petFriendly: true,
+    negotiable: "",
+    petFriendly: "",
     dateAvailable: "",
     minLeaseByMonth: 0,
     address: "",
@@ -20,8 +20,6 @@ state={
     propertyDetails: "",
     image: "",
     show: false,
-    selectedCard: {},
-    messages: [],
     fullName: "",
     email: "",
     phoneNumber: "",
@@ -37,9 +35,25 @@ logOut = () => {}
 postListing = (e) => {
     e.preventDefault();
     API.createListing({
-
+        location: this.state.location,
+        price: this.state.price,
+        rooms: this.state.rooms,
+        sqft: this.state.sqft,
+        negotiable: this.state.negotiable,
+        petFriendly: this.state.petFriendly,
+        dateAvailable: this.state.dateAvailable,
+        minLeaseByMonth: this.state.minLeaseByMonth,
+        address: this.state.address,
+        propertyDetails: this.state.propertyDetails,
+        image: this.state.image,
     })
+    .then(res => {
+              this.setState({ createdlisting: res.data });
+            })
+    .catch(err => console.log(err));
+    console.log("Listing added!!")  
 }
+
 handleInputChange = e => {
     const { name, value } = e.target;
     this.setState({
@@ -66,7 +80,7 @@ render () {
                     <Form.Label>Price:</Form.Label>
                     <Form.Control 
                     type="number" 
-                    name="text"
+                    name="price"
                     placeholder="750" 
                     onChange={this.handleInputChange} 
                     value={this.state.price}/>
@@ -96,7 +110,7 @@ render () {
                     name="negotiable"
                     placeholder="Yes"
                     onChange={this.handleInputChange} 
-                    value={this.state.sqft} />
+                    value={this.state.negotiable} />
                 </Form.Group>
                 <Form.Group controlId="petFriendly">
                     <Form.Label>Can the tenant have pets?</Form.Label>
@@ -119,7 +133,7 @@ render () {
                 <Form.Group controlId="minLeaseByMonth">
                     <Form.Label>Minimum amount of months for lease:</Form.Label>
                     <Form.Control 
-                    type="text" 
+                    type="number" 
                     name="minLeaseByMonth"
                     placeholder="February 11th, 2020"
                     onChange={this.handleInputChange} 
@@ -134,9 +148,27 @@ render () {
                     onChange={this.handleInputChange} 
                     value={this.state.address} />
                 </Form.Group>
+                <Form.Group controlId="image">
+                    <Form.Label>Image Url:</Form.Label>
+                    <Form.Control 
+                    type="text" 
+                    name="image"
+                    placeholder="https://...imageurl"
+                    onChange={this.handleInputChange} 
+                    value={this.state.image} />
+                </Form.Group>
+                <Form.Group controlId="propertyDetails">
+                    <Form.Label>Property Details:</Form.Label>
+                    <Form.Control 
+                    as="textarea"
+                    rows="5" 
+                    name="propertyDetails" 
+                    onChange={this.handleInputChange} 
+                    value={this.state.propertyDetails} />
+                </Form.Group>
                     <Button variant="primary" type="submit"
-                    disabled={!(this.state.fullName && this.state.email)}
-                    onClick={this.completeListing}>
+                    disabled={!(this.state.location)}
+                    onClick={this.postListing}>
                         Submit
                      </Button>
             </Form>
@@ -147,4 +179,4 @@ render () {
 
 }
 
-export default User;
+export default UserListing;
