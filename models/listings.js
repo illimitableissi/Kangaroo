@@ -19,11 +19,11 @@ const listingsSchema = new Schema({
         required: false
     },
     negotiable: {
-        type: Boolean,
+        type: String,
         required: true
     },
     petFriendly: {
-        type: Boolean,
+        type: String,
         required: true
     },
     dateAvailable: {

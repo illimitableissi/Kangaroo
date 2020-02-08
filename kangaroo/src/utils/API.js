@@ -17,13 +17,14 @@ contact: function(id, messageData) {
     return axios.post("/api/listings/" + id, messageData);
 },
 
-contactLister: function({ id, messageData }) {
-    return axios.post("/api/listings/location/" + id + "/submit", messageData)
-},
-
 createListing: function(listingData) {
     return axios.post("/api/listings", listingData);
 
+},
+
+deleteListing: function(id) {
+    return axios.delete("/api/listings" + id)
+    
 }
     
 };
