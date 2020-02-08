@@ -35,6 +35,14 @@ getUsers: function() {
 
 createUser: function(userData) {
     return axios.post("/api/users", userData)
-}
+},
+
+getUser: function(id) {
+    return axios.get("/api/users/:id" + id)
+},
+
+createUserListing: function(id, userListingData) {
+    return axios.post("/api/users/" + id, userListingData);
+},
     
 };
