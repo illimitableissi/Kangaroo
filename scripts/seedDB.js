@@ -17,10 +17,10 @@ const listingsSeed = [
         petFriendly: false,
         dateAvailable: "July 1st, 2020",
         minLeaseByMonth: 3,
-        address: "",
+        address: "12345 Anywhere Ln, Sandy Springs GA, 55555",
         messages: [],
-        image: "",
-        propertyDetails: ""
+        image: "/images/stockapartment.jpg",
+        propertyDetails: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ea doloremque possimus voluptate esse vitae exercitationem, est accusantium nulla magnam quod aspernatur amet consequuntur recusandae tempora quia aliquam quas quibusdam"
     },
     {
         location: "Dunwoody",
@@ -31,10 +31,10 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "March 1st, 2020",
         minLeaseByMonth: 4,
-        address: "",
+        address: "12345 Anywhere Ln, DUnwoody GA, 55555",
         messages: [],
-        image: "",
-        propertyDetails: ""
+        image: "/images/stockapartment.jpg",
+        propertyDetails: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt soluta perspiciatis consequuntur unde sapiente, earum amet tempore, modi ipsa laborum laudantium excepturi itaque accusamus incidunt omnis neque sequi qui consequatur."
         
     },
     {
@@ -46,10 +46,10 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "February 12th, 2020",
         minLeaseByMonth: 5,
-        address: "",
+        address: "12345 Anywhere Ln, Smyrna, GA 55555",
         messages: [],
-        image: "",
-        propertyDetails: ""
+        image: "/images/stockapartment.jpg",
+        propertyDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, animi doloribus beatae consequuntur, distinctio maxime voluptatem temporibus officia laudantium incidunt praesentium rem! Quisquam similique aut saepe natus officiis amet fugit!"
     },
     {
         location: "Brookhaven",
@@ -60,10 +60,10 @@ const listingsSeed = [
         petFriendly: false,
         dateAvailable: "August 12th, 2020",
         minLeaseByMonth: 2,
-        address: "",
+        address: "12345 Anywhere Ln, Brookhaven GA 55555",
         messages: [],
-        image: "",
-        propertyDetails: ""
+        image: "/images/stockapartment.jpg",
+        propertyDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi accusantium nihil necessitatibus error facere hic, debitis rerum ut consequatur numquam fuga, cumque animi ipsum aliquam deleniti, obcaecati voluptate soluta eum."
     },
     {
         location: "West Midtown",
@@ -74,10 +74,10 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "May 1st, 2020",
         minLeaseByMonth: 3,
-        address: "",
+        address: "12345 Anywhere Ln, Atlanta GA 55555",
         messages: [],
-        image: "",
-        propertyDetails: ""
+        image: "/images/stockapartment.jpg",
+        propertyDetails: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim eaque cumque pariatur maiores, voluptatum omnis reiciendis consequuntur possimus nulla debitis fugit voluptate, maxime, facere hic doloribus nam? Nostrum, tempora accusamus.    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore in, magnam amet dolorum, unde ipsum at dignissimos perferendis maxime reiciendis quis quos mollitia. Dolorum deserunt officiis assumenda, natus et omnis!"
     },
     {
         location: "North Druid Hills",
@@ -88,10 +88,10 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "March 1st, 2020",
         minLeaseByMonth: 8,
-        address: "",
+        address: "12345 Anywhere Ln, Atlanta GA 55555",
         messages: [],
-        image: "",
-        propertyDetails: ""
+        image: "/images/stockapartment.jpg",
+        propertyDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nemo sequi odio, a consequuntur fuga soluta repudiandae quis labore non corporis numquam deleniti ab, excepturi voluptatem, nostrum accusantium obcaecati ipsa?"
     },
     {
         location: "West Midtown",
@@ -102,10 +102,10 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "October 1st, 2020",
         minLeaseByMonth: 6,
-        address: "",
+        address: "12345 Anywhere Ln, Atlanta GA 55555",
         messages: [],
-        image: "",
-        propertyDetails: ""
+        image: "/images/stockapartment.jpg",
+        propertyDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, ab commodi, aliquam consequatur autem nesciunt eveniet dolorem itaque voluptates suscipit omnis doloremque odio provident nam? Id ullam sequi minus sint."
     },
     {
         location: "Buckhead",
@@ -116,10 +116,10 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "January 25th, 2020",
         minLeaseByMonth: 2,
-        address: "",
+        address: "12345 Anywhere Ln, Atlanta GA 55555",
         messages: [],
-        image: "",
-        propertyDetails: ""
+        image: "/images/stockapartment.jpg",
+        propertyDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, est distinctio. Ullam officiis consectetur beatae tenetur eaque doloremque, ratione, dolores non, explicabo neque eum. Consectetur quam quibusdam voluptatem eveniet sunt?"
     },
     {
         location: "Marietta",
@@ -130,10 +130,10 @@ const listingsSeed = [
         petFriendly: true,
         dateAvailable: "January 25th, 2020",
         minLeaseByMonth: 3,
-        address: "",
+        address: "12345 Anywhere Ln, Marietta GA 55555",
         messages: [],
-        image: "",
-        propertyDetails: ""
+        image: "/images/stockapartment.jpg",
+        propertyDetails: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur perferendis sunt debitis molestias quam quaerat eius deserunt, error assumenda. Est suscipit placeat nam officia, dicta fugit deleniti provident ut mollitia."
     }
 ];
 
