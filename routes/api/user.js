@@ -10,5 +10,4 @@ router.route("/:id")
     .post(userController.updateListing);
 
 
-
 module.exports = router;

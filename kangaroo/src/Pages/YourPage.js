@@ -1,7 +1,7 @@
 import React from 'react';
 import Parallax from '../Components/Parallax'
 
-const NoPage = () => {
+const YourPage = () => {
     return (
         <div>
             <Parallax>
@@ -11,4 +11,4 @@ const NoPage = () => {
     );
 };
 
-export default NoPage;
+export default YourPage;

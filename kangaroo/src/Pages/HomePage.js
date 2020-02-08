@@ -56,7 +56,7 @@ loadUsers = () => {
     this.setState({users: res.data});
   })
   .catch(err => console.log(err));
-  console.log(this.state)
+  console.log(this.state.users)
 }
 
 openModal = () => {

@@ -4,57 +4,96 @@ import API from '../utils/API'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
+import Card from 'react-bootstrap/Card'
 
 class LoggedIn extends React.Component {
 state = {
-    show:true,
-    listing: {},
+    show: true,
     userName: "",
     password: "",
     userListing: [],
+    users: [],
+    id: "",
+    name: ""
 };
 
-componentWillMount () {
+componentDidMount() {
+  this.loadUsers()
+};
 
+loadUsers = () => {
+  API.getUsers()
+  .then(res => {
+    this.setState({ users: res.data });
+  })
+  .catch(err => console.log(err));
+  console.log(this.state)
 }
 
+pullUserData = (password)  => {
+    API.getUserByPassword(password)
+  .then(res => {
+    this.setState({ users: res.data });
+  })
+  .catch(err => console.log(err))
+  this.setState({ show: false, id: this.state.users._id})
+}
 
+handleInputChange = e => {
+  const { name, value } = e.target;
+  this.setState({
+    [name]: value
+  });
+  console.log(value)
+};
+
+closeModal = () => {
+  this.setState({show:false})
+}
 
   render () {
       return (
         <div>
-              <Modal>
+            <Modal
+            show={this.state.show}>
               <Modal.Dialog>
                 <Modal.Header closeButton>
                   <Modal.Title>Login</Modal.Title>
                     </Modal.Header>
                       <Modal.Body>
                         <Form>
-                        <Form.Group controlId="username">
-                          <Form.Label>UserName</Form.Label>
+                        <Form.Group controlId="userName">
+                          <Form.Label>Username</Form.Label>
                             <Form.Control
                             type="text" 
                             name="userName"  
                             onChange={this.handleInputChange} 
-                            value={this.state.fullName}/>
+                            value={this.state.userName}/>
                         </Form.Group>
                         <Form.Group controlId="password">
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label>Password</Form.Label>
                             <Form.Control 
                             type="text" 
-                            name="passeord"
+                            name="password"
                             onChange={this.handleInputChange} 
                             value={this.state.password}/>
                           </Form.Group>
                         </Form>
                       </Modal.Body>
                     <Modal.Footer>
-                      <Button variant="primary"
+                      {this.state.users.map(user =>
+                      <Button 
+                      variant="primary"
+                      disabled={(this.state.password !== user.password)}  
+                      onClick={this.pullUserData}
                       >Submit</Button>
+                      )}
                     </Modal.Footer>
                 </Modal.Dialog>
               </Modal>  
-            <Nav />          
+            <Card>
+            <a className="btn btn-success" role="button" href={"/users/" + this.state.id}>View Your Page</a>    
+            </Card>      
         </div>
     );
   }

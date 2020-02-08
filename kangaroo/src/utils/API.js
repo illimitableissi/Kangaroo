@@ -38,11 +38,14 @@ createUser: function(userData) {
 },
 
 getUser: function(id) {
-    return axios.get("/api/users/:id" + id)
+    return axios.get("/api/users/" + id)
 },
 
 createUserListing: function(id, userListingData) {
     return axios.post("/api/users/" + id, userListingData);
 },
-    
+
+getUserByPassword: function(password) {
+    return axios.get("/api/users?password=" + password)
+},
 };
