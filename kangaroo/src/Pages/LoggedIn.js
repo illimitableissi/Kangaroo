@@ -11,10 +11,19 @@ state = {
     show: true,
     userName: "",
     password: "",
-    userListing: [],
     users: [],
+    user: {},
     id: "",
     name: ""
+};
+
+onSubmit = e => {
+  e.preventDefault();
+const userData = {
+    userName: this.state.userName,
+    password: this.state.password
+  };
+  console.log(userData);
 };
 
 componentDidMount() {
@@ -30,13 +39,15 @@ loadUsers = () => {
   console.log(this.state)
 }
 
-pullUserData = (password)  => {
-    API.getUserByPassword(password)
+pullUserData = ()  => {
+    API.getIdByPassword(
+      this.state.id, this.state.password)
   .then(res => {
-    this.setState({ users: res.data });
+    this.setState({ user: res.data });
   })
   .catch(err => console.log(err))
-  this.setState({ show: false, id: this.state.users._id})
+  this.setState({ show: false, id: this.state.user._id})
+  console.log(this.state.user)
 }
 
 handleInputChange = e => {
@@ -61,7 +72,7 @@ closeModal = () => {
                   <Modal.Title>Login</Modal.Title>
                     </Modal.Header>
                       <Modal.Body>
-                        <Form>
+                        <Form onSubmit={this.onSubmit}>
                         <Form.Group controlId="userName">
                           <Form.Label>Username</Form.Label>
                             <Form.Control

@@ -1,14 +1,23 @@
 import React from 'react';
-import Parallax from '../Components/Parallax'
+import API from '../utils/API'
 
-const YourPage = () => {
-    return (
-        <div>
-            <Parallax>
-            <h1>Sorry that page doesnt exist</h1>
-            </Parallax>
-        </div>
-    );
+class YourPage extends React.Component {
+    state = {
+        user: {}
+    };
+    
+    componentDidMount() {
+        API.getUser(this.props.match.params.id)
+          .then(res => this.setState({ user: res.data }))
+          .catch(err => console.log(err));
+      }
+    render () {
+        return (
+            <div>
+                <h1>{this.state.user.name}</h1>
+            </div>
+        )
+    }
+
 };
-
 export default YourPage;

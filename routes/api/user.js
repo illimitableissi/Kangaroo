@@ -9,5 +9,8 @@ router.route("/:id")
     .get(userController.findById)
     .post(userController.updateListing);
 
+router.route("/:id")
+    .get(userController.findByCredentials)
+
 
 module.exports = router;

@@ -45,7 +45,7 @@ createUserListing: function(id, userListingData) {
     return axios.post("/api/users/" + id, userListingData);
 },
 
-getUserByPassword: function(password) {
-    return axios.get("/api/users?password=" + password)
+getIdByPassword: function(id, password) {
+    return axios.get("/api/users" + id  + "?=" + password)
 },
 };
