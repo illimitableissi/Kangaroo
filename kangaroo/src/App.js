@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route exact path="/listing/:id" component={ListingDetail} />
           <Route exact path="/user" component={UserListing} />
-          <Route exact path="/use.:idr" component={YourPage} />
+          <Route exact path="/user/:id" component={YourPage} />
       </div>
     </Router>
   );
