@@ -2,7 +2,7 @@ import React from 'react';
 import '../addresses.json';
 import './components.css'
 
-const SearchForm = ({children, handleChange}) => {
+const SearchForm = ({children, handleChange, handleInput}) => {
     return (
         <div>
             <form>
@@ -15,11 +15,11 @@ const SearchForm = ({children, handleChange}) => {
                         {children}
                     </select>
                 </div>
-                {/* <div className="form-group"> */}
-                    {/* <label for="price">Price?</label>
-                    <input className="form-control form-control-sm"></input>
-                </div>
                 <div className="form-group">
+                    <label for="price">Price?</label>
+                    <input className="form-control form-control-sm" onChange={handleInput} />
+                </div>
+         {/* <div className="form-group"> 
                     <label for="rooms">Amount of Rooms?</label>
                     <input className="form-control form-control-sm"></input>
                 </div>
@@ -38,7 +38,7 @@ const SearchForm = ({children, handleChange}) => {
                         <option>Yes</option>
                         <option>No</option>
                     </select>
-                </div> */}
+                </div>  */}
             </form>
          </div>
     );

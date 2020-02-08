@@ -85,6 +85,14 @@ filter = (location) => {
     .catch(err => console.log(err));
 };
 
+findPrice = (price) => {
+    API.getPrice(price)
+    .then(res => { 
+        this.setState({ listings: res.data });
+    })
+    .catch(err => console.log(err));
+};
+
 openModal = (listing) => {
     this.setState({show:true, selectedCard:listing, id:listing._id})
 }
@@ -173,7 +181,10 @@ render () {
                     <Column>              
                     <SearchForm
                         handleChange={(e) => this.filter(e.target.value)}
+                        handleInput={(e) => this.findPrice(e.target.value)}
+                        
                     >
+                    <option></option>
                     {this.state.filters.map(listing => <option>{listing.location}</option>)};
                     </SearchForm>               
                     </Column>
@@ -197,7 +208,7 @@ render () {
                     </Column>
                 </Row>
             </Container>   
-            </Parallax>    
+             </Parallax>    
         </div>
     );
 };

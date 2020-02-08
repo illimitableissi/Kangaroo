@@ -9,6 +9,10 @@ getListing: function(location){
     return axios.get("/api/listings?location=" + location);
 },
 
+getPrice: function(price){
+    return axios.get("/api/listings?price=" + price);
+},
+
 getId: function(id) {
     return axios.get("/api/listings/" + id);
 },

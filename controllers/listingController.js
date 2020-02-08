@@ -21,6 +21,14 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByPrice: function(req, res) {
+    db.listings
+      .find(req.query)
+      .where("location").equals(req.params.location)
+      .where("price").equals(req.params.price)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     db.listings
       .create(req.body)
