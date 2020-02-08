@@ -8,6 +8,31 @@ import Nav from '../Components/Nav'
 import Modal from 'react-bootstrap/Modal'
 import API from '../utils/API'
 
+const MyVerticallyCenteredModal = ({ children, onClick, ...rest}) => {
+  return (
+    <Modal
+      {...rest}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+  <Modal.Dialog>
+      <Modal.Header>
+        <Modal.Title id="contained-modal-title-vcenter">
+        Registration:
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+          {children}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={onClick}>Close</Button>
+      </Modal.Footer>
+      </Modal.Dialog>
+    </Modal>
+  );
+}
+
 class HomePage extends React.Component {
   state ={
     user=[],
@@ -17,6 +42,21 @@ class HomePage extends React.Component {
     name: "",
 
   }
+openModal = () => {
+    this.setState({show:true})
+}
+
+closeModal = () => {
+    this.setState({show:false})
+}
+
+handleInputChange = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+    console.log(value)
+  };
 
 createUser = () => {
   API.createUser({
@@ -33,6 +73,44 @@ createUser = () => {
 render () {
   return (
     <div className="App">
+                  <MyVerticallyCenteredModal 
+            show={this.state.show}
+            onClick={this.closeModal}
+            >
+            <Form>
+                <Form.Group controlId="name">
+                  <Form.Label>Enter Your Name</Form.Label>
+                    <Form.Control
+                    type="text" 
+                    name="name"
+                    placeholder="John J."  
+                    onChange={this.handleInputChange} 
+                    value={this.state.name}/>
+                </Form.Group>
+                <Form.Group controlId="userName">
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control 
+                    type="text" 
+                    name="userName"
+                    placeholder="johnj3" 
+                    onChange={this.handleInputChange} 
+                    value={this.state.userName}/>
+                </Form.Group>
+                <Form.Group controlId="password">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control 
+                    type="text" 
+                    name="password"
+                    onChange={this.handleInputChange} 
+                    value={this.state.password} />
+                </Form.Group>
+                    <Button variant="primary" type="submit"
+                    disabled={!(this.state.name && this.state.userName && this.state.password)}
+                    onClick={this.createUser}>
+                        Submit
+                     </Button>
+            </Form>
+            </MyVerticallyCenteredModal>
       <Parallax>
       <Jumbotron />
         <Container>
