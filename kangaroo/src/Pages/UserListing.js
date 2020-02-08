@@ -2,6 +2,7 @@ import React from 'react';
 import API from '../utils/API'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 
 class UserListing extends React.Component{
 
@@ -44,8 +45,8 @@ postListing = (e) => {
         dateAvailable: this.state.dateAvailable,
         minLeaseByMonth: this.state.minLeaseByMonth,
         address: this.state.address,
-        propertyDetails: this.state.propertyDetails,
         image: this.state.image,
+        propertyDetails: this.state.propertyDetails,
     })
     .then(res => {
               this.setState({ createdlisting: res.data });
@@ -66,6 +67,7 @@ handleInputChange = e => {
 render () {
     return (
         <div>
+            <Container>
                  <Form>
                 <Form.Group controlId="name">
                   <Form.Label>Listing Location:</Form.Label>
@@ -90,7 +92,7 @@ render () {
                     <Form.Control 
                     type="number" 
                     name="rooms"
-                    placeholder="750" 
+                    placeholder="1" 
                     onChange={this.handleInputChange} 
                     value={this.state.rooms}/>
                 </Form.Group>
@@ -172,7 +174,7 @@ render () {
                         Submit
                      </Button>
             </Form>
-            
+        </Container>     
         </div>
     );
 };
