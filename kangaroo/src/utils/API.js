@@ -23,12 +23,14 @@ contact: function(id, messageData) {
 
 createListing: function(listingData) {
     return axios.post("/api/listings", listingData);
-
 },
 
 deleteListing: function(id) {
     return axios.delete("/api/listings" + id)
-    
+},
+
+createUser: function(userData) {
+    return axios.post("/api/users" + userData)
 }
     
 };

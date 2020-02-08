@@ -5,8 +5,32 @@ import {Container, Row, Column} from '../Components/Grid';
 import Card from '../Components/Card';
 import Images from '../Components/Images'
 import Nav from '../Components/Nav'
+import Modal from 'react-bootstrap/Modal'
+import API from '../utils/API'
 
-function HomePage() {
+class HomePage extends React.Component {
+  state ={
+    user=[],
+    show: false,
+    userName: "",
+    password: "",
+    name: "",
+
+  }
+
+createUser = () => {
+  API.createUser({
+    name: this.state.name,
+    userName: this.state.userName,
+    password: this.state.password
+  })
+  .then(res => { 
+    this.setState({ user: res.data });
+  })
+  .catch(err => console.log(err));
+}
+
+render () {
   return (
     <div className="App">
       <Parallax>
@@ -34,6 +58,8 @@ function HomePage() {
 
     </div>
   );
+}
+
 }
 
 export default HomePage;

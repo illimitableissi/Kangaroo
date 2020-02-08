@@ -7,7 +7,6 @@ import API from '../utils/API';
 import Parallax from '../Components/Parallax';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-// import Form from '../Components/Form';
 import Form from 'react-bootstrap/Form'
 
 const MyVerticallyCenteredModal = ({ children, onClick, selectedCard, ...rest}) => {

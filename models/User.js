@@ -6,7 +6,7 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  email: {
+  userName: {
     type: String,
     required: true
   },
@@ -14,6 +14,7 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  yourListing: [],
   date: {
     type: Date,
     default: Date.now
