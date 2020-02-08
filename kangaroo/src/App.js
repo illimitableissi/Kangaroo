@@ -5,7 +5,8 @@ import Search from "./Pages/Search";
 import LoggedIn from "./Pages/LoggedIn";
 import Nav from './Components/Nav';
 import ListingDetail from './Pages/ListingDetail';
-import NoPage from './Pages/NoPage'
+import NoPage from './Pages/NoPage';
+import User from './Pages/User'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/user" component={LoggedIn} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/listing/:id" component={ListingDetail} />
+          <Route exact path="/user/:id" component={User} />
           {/* <Route component={NoPage} /> */}
       </div>
     </Router>
