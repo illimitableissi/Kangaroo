@@ -7,6 +7,9 @@ import Images from '../Components/Images'
 import Nav from '../Components/Nav'
 import Modal from 'react-bootstrap/Modal'
 import API from '../utils/API'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+
 
 const MyVerticallyCenteredModal = ({ children, onClick, ...rest}) => {
   return (
@@ -35,13 +38,27 @@ const MyVerticallyCenteredModal = ({ children, onClick, ...rest}) => {
 
 class HomePage extends React.Component {
   state ={
-    user=[],
+    users:[],
     show: false,
     userName: "",
     password: "",
     name: "",
 
   }
+
+componentDidMount(){
+  this.loadUsers()
+};
+
+loadUsers = () => {
+  API.getUsers()
+  .then(res => {
+    this.setState({users: res.data});
+  })
+  .catch(err => console.log(err));
+  console.log(this.state)
+}
+
 openModal = () => {
     this.setState({show:true})
 }
@@ -58,22 +75,26 @@ handleInputChange = e => {
     console.log(value)
   };
 
-createUser = () => {
-  API.createUser({
+userCreate = (e) => {
+  e.preventDefault()
+  if(this.state.name && this.state.userName && this.state.password){  
+    API.createUser({
     name: this.state.name,
     userName: this.state.userName,
     password: this.state.password
-  })
-  .then(res => { 
-    this.setState({ user: res.data });
-  })
+    }
+  )
+  .then(res => this.loadUsers())
   .catch(err => console.log(err));
+  }
+  this.setState({show:false})
+  console.log("this works")
 }
 
 render () {
   return (
-    <div className="App">
-                  <MyVerticallyCenteredModal 
+    <div>
+            <MyVerticallyCenteredModal 
             show={this.state.show}
             onClick={this.closeModal}
             >
@@ -106,13 +127,13 @@ render () {
                 </Form.Group>
                     <Button variant="primary" type="submit"
                     disabled={!(this.state.name && this.state.userName && this.state.password)}
-                    onClick={this.createUser}>
-                        Submit
+                    onClick={this.userCreate}>
+                        Register
                      </Button>
             </Form>
             </MyVerticallyCenteredModal>
       <Parallax>
-      <Jumbotron />
+      <Jumbotron onClick={this.openModal} />
         <Container>
           <br />
           <Card

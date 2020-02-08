@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+
 // Create Schema
 const UserSchema = new Schema({
   name: {
@@ -14,10 +15,12 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  yourListing: [],
+  userListing: [],
   date: {
     type: Date,
     default: Date.now
   }
 });
-module.exports = User = mongoose.model("users", UserSchema);
+
+const User = mongoose.model("User", UserSchema);
+module.exports = User; 

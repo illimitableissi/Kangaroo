@@ -29,8 +29,12 @@ deleteListing: function(id) {
     return axios.delete("/api/listings" + id)
 },
 
+getUsers: function() {
+    return axios.get("/api/users")
+},
+
 createUser: function(userData) {
-    return axios.post("/api/users" + userData)
+    return axios.post("/api/users", userData)
 }
     
 };
