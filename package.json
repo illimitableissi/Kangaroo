@@ -1,45 +1,45 @@
 {
-  "name": "kangaroo",
-  "version": "1.0.0",
-  "description": "Full-stack MERN app with user authentication",
-  "main": "server.js",
-  "engines": {
-    "node": "10.16.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "server": "node-env-run server --exec nodemon",
-    "dev": "run-p server start",
-    "dual": "concurrently \"nodemon --ignore 'kangaroo/*'\" \"npm run kangaroo\"",
-    "seed": "node scripts/seedDB.js",
-    "kangaroo": "cd kangaroo && npm run start",
-    "build": "cd kangaroo && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/colin-green/Project-3.git"
-  },
-  "author": "Colin Green, Andrew Fowose, Farah Asadulla, Issi Inegbedion",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/colin-green/Project-3/issues"
-  },
-  "homepage": "https://github.com/colin-green/Project-3#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "concurrently": "^5.1.0",
-    "express": "^4.17.1",
-    "is-empty": "^1.2.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.8.9",
-    "node-env-run": "^3.0.2",
-    "npm-run-all": "^4.1.5",
-    "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0",
-    "pino": "^5.16.0",
-    "validator": "^12.1.0"
-  }
+	"name": "kangaroo",
+	"version": "1.0.0",
+	"description": "Full-stack MERN app with user authentication",
+	"main": "server.js",
+	"engines": {
+		"node": "10.16.0"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server.js",
+		"server": "node-env-run server --exec nodemon",
+		"dev": "run-p server start",
+		"dual": "concurrently \"nodemon --ignore 'kangaroo/*'\" \"npm run kangaroo\"",
+		"seed": "node scripts/seedDB.js",
+		"kangaroo": "cd kangaroo && npm run start",
+		"build": "cd kangaroo && npm run build",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix kangaroo && npm run build --prefix kangaroo"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/colin-green/Project-3.git"
+	},
+	"author": "Colin Green, Andrew Fowose, Farah Asadulla, Issi Inegbedion",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/colin-green/Project-3/issues"
+	},
+	"homepage": "https://github.com/colin-green/Project-3#readme",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"concurrently": "^5.1.0",
+		"express": "^4.17.1",
+		"is-empty": "^1.2.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.8.9",
+		"node-env-run": "^3.0.2",
+		"npm-run-all": "^4.1.5",
+		"passport": "^0.4.1",
+		"passport-jwt": "^4.0.0",
+		"pino": "^5.16.0",
+		"validator": "^12.1.0"
+	}
 }
