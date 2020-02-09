@@ -14,7 +14,6 @@
 		"dual": "concurrently \"nodemon --ignore 'kangaroo/*'\" \"npm run kangaroo\"",
 		"seed": "node scripts/seedDB.js",
 		"kangaroo": "cd kangaroo && npm run start",
-		"build": "cd kangaroo && npm run build",
 		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix kangaroo && npm run build --prefix kangaroo"
 	},
 	"repository": {
