@@ -17,14 +17,6 @@ state = {
     name: ""
 };
 
-onSubmit = e => {
-  e.preventDefault();
-const userData = {
-    userName: this.state.userName,
-    password: this.state.password
-  };
-  console.log(userData);
-};
 
 componentDidMount() {
   this.loadUsers()
@@ -46,7 +38,7 @@ pullUserData = ()  => {
     this.setState({ user: res.data });
   })
   .catch(err => console.log(err))
-  this.setState({ show: false, id: this.state.user._id})
+  this.setState({ show: false})
   console.log(this.state.user)
 }
 
@@ -68,11 +60,11 @@ closeModal = () => {
             <Modal
             show={this.state.show}>
               <Modal.Dialog>
-                <Modal.Header closeButton>
+                <Modal.Header>
                   <Modal.Title>Login</Modal.Title>
                     </Modal.Header>
                       <Modal.Body>
-                        <Form onSubmit={this.onSubmit}>
+                        <Form>
                         <Form.Group controlId="userName">
                           <Form.Label>Username</Form.Label>
                             <Form.Control
@@ -95,7 +87,7 @@ closeModal = () => {
                       {this.state.users.map(user =>
                       <Button 
                       variant="primary"
-                      disabled={(this.state.password !== user.password)}  
+                      disabled={(this.state.userName !== user.userName | this.state.password !== user.password)}  
                       onClick={this.pullUserData}
                       >Submit</Button>
                       )}
@@ -103,7 +95,8 @@ closeModal = () => {
                 </Modal.Dialog>
               </Modal>  
             <Card>
-            <a className="btn btn-success" role="button" href={"/users/" + this.state.id}>View Your Page</a>    
+              <h1>{this.state.name}</h1>
+            <a className="btn btn-success" role="button" href={"/users/" + this.state.user._id}>View Your Page</a>    
             </Card>      
         </div>
     );
