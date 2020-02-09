@@ -85,7 +85,7 @@ closeModal = () => {
                         </Form>
                       </Modal.Body>
                     <Modal.Footer>
-                      {this.state.users.map(user =>
+                      {this.state.users.map(user => 
                       <Button 
                       variant="primary"
                       disabled={(this.state.userName !== user.userName | this.state.password !== user.password)}  

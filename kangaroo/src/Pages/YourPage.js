@@ -22,12 +22,17 @@ class YourPage extends React.Component {
             pullListingsByUsername(this.state.user.userName)
             .then(listing => {
               this.setState({listings: listing.data});
-            console.log(this.state)
+            console.log(this.state.listings[0].userName)
             return this.state
         });
       });
     }
-    
+
+    deleteListing = id => {
+        API.deleteListing(id)
+ 
+      };
+
     render () {
         return (
             <div>
@@ -35,18 +40,26 @@ class YourPage extends React.Component {
                 <h1>Welcome {this.state.user.name}!</h1>
                 <a className="btn btn-danger" href="/">Logout</a>
                 <a className="btn btn-success" href={"/user/" + this.state.user._id + "/form"}>Create Listing</a>
-                {/* {this.state.user.userListing.map(listing => */}
+                {this.state.listings.map(listing => 
                 <Card>
-                    <Card.Header>Featured</Card.Header>
+                    <Card.Header>Your Listings:</Card.Header>
                     <Card.Body>
                         <Card.Title>Special title treatment</Card.Title>
-                        <Card.Text>
-                        {/* {listing.location} */}
-                        </Card.Text>
-                        <Button variant="danger">Delete Listing</Button>
+                        <Card.Text>Location: {listing.location}</Card.Text>
+                        <Card.Text>Price: {listing.price}</Card.Text>
+                        <Card.Text>Rooms: {listing.rooms}</Card.Text>
+                        <Card.Text>Sqft: {listing.sqft}</Card.Text>
+                        <Card.Text>Negotiable: {listing.negotiable}</Card.Text>
+                        <Card.Text>Pet Friendly: {listing.petFriendly}</Card.Text>
+                        <Card.Text>Date Available: {listing.dateAvailable}</Card.Text>
+                        <Card.Text>Minimum Lease: {listing.minLeaseByMonth}</Card.Text>
+                        <Card.Text>Address: {listing.adress}</Card.Text>
+                        <Button variant="danger"
+                        onClick={() => this.deleteListing(listing._id)}
+                        >Delete Listing</Button>
                     </Card.Body>
                 </Card>
-                {/* )} */}
+                 )}
             </div>
         )
     }

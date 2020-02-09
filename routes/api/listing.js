@@ -15,6 +15,7 @@ router.route("/location/:id/submit")
 router.route("/:id")
     .get(listingController.findById)
     .post(listingController.update)
+    .delete(listingController.remove)
 
 router.route("/userName")
     .get(listingController.findByUserName)
