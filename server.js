@@ -34,9 +34,9 @@ require('./config/passport')(passport);
 // 	app.use(express.static('client/build'));
 // }
 
-app.get('*', function(req, res) {
-	res.sendFile(path.join(__dirname, './kangaroo/build/index.html'));
-});
+// app.get('*', function(req, res) {
+// 	res.sendFile(path.join(__dirname, './kangaroo/build/index.html'));
+// });
 
 // Routes
 app.use(routes);
