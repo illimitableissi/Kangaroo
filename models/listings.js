@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // Create Schema
 const listingsSchema = new Schema({
+    userName: {
+        type:String,
+        required:true,
+        trim: true
+    },
     location: {
         type: String,
         required: true

@@ -9,6 +9,7 @@ mongoose.connect(
 
 const listingsSeed = [
     {
+        userName="",
         location: "Sandy Springs",
         price: 900,
         rooms: 1,
@@ -24,6 +25,7 @@ const listingsSeed = [
       
     },
     {
+        userName="",
         location: "Dunwoody",
         price: 1200,
         rooms: 1,
@@ -38,6 +40,7 @@ const listingsSeed = [
         messages:[]
     },
     {
+        userName="",
         location: "Smyrna",
         price: 1700,
         rooms: 2,
@@ -52,6 +55,7 @@ const listingsSeed = [
         messages:[]
     },
     {
+        userName="",
         location: "Brookhaven",
         price: 2000,
         rooms: 3,
@@ -66,6 +70,7 @@ const listingsSeed = [
         messages:[]
     },
     {
+        userName="",
         location: "West Midtown",
         price: 1500,
         rooms: 1,
@@ -80,6 +85,7 @@ const listingsSeed = [
         messages:[]
     },
     {
+        userName="",
         location: "North Druid Hills",
         price: 2700,
         rooms: 3,
@@ -94,6 +100,7 @@ const listingsSeed = [
         messages:[]
     },
     {
+        userName="",
         location: "West Midtown",
         price: 1100,
         rooms: 1,
@@ -108,6 +115,7 @@ const listingsSeed = [
         messages:[]
     },
     {
+        userName="",
         location: "Buckhead",
         price: 1460,
         rooms: 1,
@@ -122,6 +130,7 @@ const listingsSeed = [
         messages:[]
     },
     {
+        userName="",
         location: "Marietta",
         price: 2065,
         rooms: 2,

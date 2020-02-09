@@ -29,6 +29,13 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByUserName: function(req, res) {
+    db.listings
+      .find(req.query)
+      .where("userName").equals(req.params.userName)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     db.listings
       .create(req.body)

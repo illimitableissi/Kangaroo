@@ -26,6 +26,7 @@ state={
     email: "",
     phoneNumber: "",
     id:"",
+    userName: ""
 }
 
 componentDidMount = () => {
@@ -38,6 +39,7 @@ componentDidMount = () => {
 postListing = (e) => {
     e.preventDefault();
     API.createListing({
+        userName: this.state.userName,
         location: this.state.location,
         price: this.state.price,
         rooms: this.state.rooms,
@@ -61,6 +63,7 @@ addListing = (e) => {
     e.preventDefault();
     API.createUserListing(
         this.state.savedListing._id, {
+        userName: this.state.userName,
         location: this.state.location,
         price: this.state.price,
         rooms: this.state.rooms,
@@ -95,6 +98,15 @@ render () {
             <a href={"/user/" + this.state.savedListing._id} role="button" className="btn btn-danger">Go Back</a>
             <Container>
                  <Form>
+                 <Form.Group controlId="userName">
+                  <Form.Label>Username for Listing:</Form.Label>
+                    <Form.Control
+                    type="text" 
+                    name="userName"
+                    placeholder="badman21"  
+                    onChange={this.handleInputChange} 
+                    value={this.state.userName}/>
+                </Form.Group>
                 <Form.Group controlId="name">
                   <Form.Label>Listing Location:</Form.Label>
                     <Form.Control

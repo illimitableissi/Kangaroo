@@ -16,4 +16,7 @@ router.route("/:id")
     .get(listingController.findById)
     .post(listingController.update)
 
+router.route("/userName")
+    .get(listingController.findByUserName)
+
 module.exports = router;

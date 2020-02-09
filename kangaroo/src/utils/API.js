@@ -29,6 +29,10 @@ deleteListing: function(id) {
     return axios.delete("/api/listings" + id)
 },
 
+getUserName: function(userName) {
+    return axios.get("/api/listings?userName=" + userName)
+},
+
 getUsers: function() {
     return axios.get("/api/users")
 },
@@ -48,4 +52,6 @@ createUserListing: function(id, userListingData) {
 getIdByPassword: function(password) {
     return axios.get("/api/users?password=" + password)
 },
+
+
 };
