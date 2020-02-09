@@ -3,7 +3,7 @@ const db = require("../models");
 
 
 mongoose.connect(
-    process.env.PORT ||
+    process.env.MONGODB_URI ||
     "mongodb+srv://colingreen:cmgkpag118@kangaroodb-pgkex.mongodb.net/kangaroo"
 );
 

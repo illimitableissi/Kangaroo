@@ -20,6 +20,7 @@ const db = require("./config/keys").mongoURI;
 // Connect to MongoDB
 mongoose
   .connect(
+    process.env.MONGODB_URI ||
     db,
     { useNewUrlParser: true }
   )
@@ -45,5 +46,5 @@ app.get("*", function(req, res) {
 app.use(routes);
 app.use("/api/users", users);
 
-const port = process.env.PORT || 5000; // process.env.port is Heroku's port if you choose to deploy the app there
+const port = process.env.MONGODB_URI || 5000; // process.env.port is Heroku's port if you choose to deploy the app there
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
