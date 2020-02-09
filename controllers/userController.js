@@ -22,7 +22,7 @@ module.exports = {
     updateListing: function(req, res) {
         db.User
           .findOneAndUpdate({ _id: req.params.id },
-            { $push: {"yourListing": req.body}})
+            { $push: {"userListing": req.body}})
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
     },

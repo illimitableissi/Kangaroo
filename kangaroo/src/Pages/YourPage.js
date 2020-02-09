@@ -15,6 +15,7 @@ class YourPage extends React.Component {
         return (
             <div>
                 <h1>{this.state.user.name}</h1>
+                <a className="btn btn-success" href={"/user/" + this.state.user._id + "/form"}>Create Listing</a>
             </div>
         )
     }

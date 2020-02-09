@@ -18,7 +18,20 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  userListing: [],
+  userListing: [{
+    location: String,
+    price: Number,
+    rooms: Number,
+    sqft: Number,
+    negotiable: String,
+    petFriendly: String,
+    dateAvailable: String,
+    minLeaseByMonth: String,
+    address: String,
+    image: String,
+    propertyDetails: String,
+    messages:[]
+  }],
   date: {
     type: Date,
     default: Date.now

@@ -20,6 +20,7 @@ const listingsSeed = [
         address: "12345 Anywhere Ln Sandy Springs, GA 55555",
         image: "/images/stockapartment.jpg",
         propertyDetails: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor ea doloremque possimus voluptate esse vitae exercitationem, est accusantium nulla magnam quod aspernatur amet consequuntur recusandae tempora quia aliquam quas quibusdam",
+        messages:[]
       
     },
     {

@@ -8,6 +8,7 @@ class UserListing extends React.Component{
 
 state={
     createdlisting: [],
+    savedListing: [],
     location: "",
     price: "",
     rooms: "",
@@ -27,11 +28,13 @@ state={
     id:"",
 }
 
-componentDidMount = () => {}
 
-completeListing = () => {}
+componentDidMount = () => {
+    API.getUser(this.props.match.params.id)
+          .then(res => this.setState({ savedListing: res.data }))
+          .catch(err => console.log(err));
+}
 
-logOut = () => {}
 
 postListing = (e) => {
     e.preventDefault();
@@ -55,6 +58,29 @@ postListing = (e) => {
     console.log("Listing added!!")  
 }
 
+addListing = (e) => {
+    e.preventDefault();
+    API.createUserListing(
+        this.state.savedListing._id, {
+        location: this.state.location,
+        price: this.state.price,
+        rooms: this.state.rooms,
+        sqft: this.state.sqft,
+        negotiable: this.state.negotiable,
+        petFriendly: this.state.petFriendly,
+        dateAvailable: this.state.dateAvailable,
+        minLeaseByMonth: this.state.minLeaseByMonth,
+        address: this.state.address,
+        image: this.state.image,
+        propertyDetails: this.state.propertyDetails,
+    })
+    .then(res => {
+              this.setState({ savedListing: res.data });
+            })
+    .catch(err => console.log(err));
+    console.log("Listing added!!")  
+}
+
 handleInputChange = e => {
     const { name, value } = e.target;
     this.setState({
@@ -67,6 +93,7 @@ handleInputChange = e => {
 render () {
     return (
         <div>
+            <a href={"/user/" + this.state.savedListing._id} role="button" className="btn btn-danger">Go Back</a>
             <Container>
                  <Form>
                 <Form.Group controlId="name">
@@ -171,7 +198,12 @@ render () {
                     <Button variant="primary" type="submit"
                     disabled={!(this.state.location)}
                     onClick={this.postListing}>
-                        Submit
+                        Make Listing Public
+                     </Button>
+                     <Button variant="primary" type="submit"
+                    disabled={!(this.state.location)}
+                    onClick={this.addListing}>
+                        Save Listing to Profile
                      </Button>
             </Form>
         </Container>     
