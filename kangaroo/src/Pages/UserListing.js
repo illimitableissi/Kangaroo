@@ -28,7 +28,6 @@ state={
     id:"",
 }
 
-
 componentDidMount = () => {
     API.getUser(this.props.match.params.id)
           .then(res => this.setState({ savedListing: res.data }))

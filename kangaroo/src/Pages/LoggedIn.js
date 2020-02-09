@@ -12,7 +12,7 @@ state = {
     userName: "",
     password: "",
     users: [],
-    user: {},
+    user: [],
     id: "",
     name: ""
 };
@@ -28,18 +28,19 @@ loadUsers = () => {
     this.setState({ users: res.data });
   })
   .catch(err => console.log(err));
-  console.log(this.state)
+  console.log(this.state.user)
 }
 
+
 pullUserData = ()  => {
-    API.getIdByPassword(
-      this.state.id, this.state.password)
+    API.getIdByPassword(this.state.password)
   .then(res => {
     this.setState({ user: res.data });
+    this.loadUsers();
   })
   .catch(err => console.log(err))
-  this.setState({ show: false})
-  console.log(this.state.user)
+  this.setState({ show: false });
+  console.log("this worked")
 }
 
 handleInputChange = e => {
@@ -95,8 +96,9 @@ closeModal = () => {
                 </Modal.Dialog>
               </Modal>  
             <Card>
-              <h1>{this.state.name}</h1>
-            <a className="btn btn-success" role="button" href={"/users/" + this.state.user._id}>View Your Page</a>    
+              {this.state.user.map(user =>
+            <a className="btn btn-success" role="button" href={"/user/" + user._id}>View Your Page</a>   
+              )} 
             </Card>      
         </div>
     );
