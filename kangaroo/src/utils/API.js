@@ -26,7 +26,7 @@ createListing: function(listingData) {
 },
 
 deleteListing: function(id) {
-    return axios.delete("/api/listings" + id)
+    return axios.delete("/api/listings/" + id)
 },
 
 getUserName: function(userName) {

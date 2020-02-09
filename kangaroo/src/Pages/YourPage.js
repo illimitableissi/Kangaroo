@@ -3,6 +3,9 @@ import API from '../utils/API'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Nav from '../Components/Nav'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 function pullListingsByUsername (userName) {
     return API.getUserName(userName)
@@ -12,7 +15,7 @@ function pullListingsByUsername (userName) {
 class YourPage extends React.Component {
     state = {
         user: [],
-        listings: {},
+        listings: [],
     };
     
     componentDidMount() {
@@ -30,6 +33,9 @@ class YourPage extends React.Component {
 
     deleteListing = id => {
         API.deleteListing(id)
+        .then (
+            window.location.reload()
+        )
  
       };
 
@@ -40,11 +46,29 @@ class YourPage extends React.Component {
                 <h1>Welcome {this.state.user.name}!</h1>
                 <a className="btn btn-danger" href="/">Logout</a>
                 <a className="btn btn-success" href={"/user/" + this.state.user._id + "/form"}>Create Listing</a>
+                <Container fluid>
+                <Row>
+                <Col>
+                <h4>Your listing interests:</h4>
                 {this.state.listings.map(listing => 
                 <Card>
-                    <Card.Header>Your Listings:</Card.Header>
+                <Card.Header>Listing Id: {listing._id}</Card.Header>
+                {listing.messages.map(message =>
+                <Card.Body>
+                <Card.Text>Name: {message.fullName}</Card.Text>
+                <Card.Text>email: {message.email}</Card.Text>
+                <Card.Text>Phone Number: {message.phoneNumber}</Card.Text>
+                </Card.Body>
+                )}
+                </Card>
+                 )}
+                </Col>
+                <Col xs md={8}>
+                <h4>Your listings:</h4>
+                {this.state.listings.map(listing => 
+                <Card>
+                    <Card.Header>Listing Id: {listing._id}</Card.Header>
                     <Card.Body>
-                        <Card.Title>Special title treatment</Card.Title>
                         <Card.Text>Location: {listing.location}</Card.Text>
                         <Card.Text>Price: {listing.price}</Card.Text>
                         <Card.Text>Rooms: {listing.rooms}</Card.Text>
@@ -60,6 +84,9 @@ class YourPage extends React.Component {
                     </Card.Body>
                 </Card>
                  )}
+                 </Col>
+                 </Row>
+                </Container>
             </div>
         )
     }

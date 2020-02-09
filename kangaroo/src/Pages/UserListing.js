@@ -101,11 +101,13 @@ render () {
                  <Form.Group controlId="userName">
                   <Form.Label>Username for Listing:</Form.Label>
                     <Form.Control
-                    type="text" 
+                    // type="text" 
                     name="userName"
-                    placeholder="badman21"  
+                    placeholder={this.state.savedListing.userName} 
+                    // defaultValue={this.state.savedListing.userName} 
                     onChange={this.handleInputChange} 
-                    value={this.state.userName}/>
+                    value={this.state.userName}
+                    />
                 </Form.Group>
                 <Form.Group controlId="name">
                   <Form.Label>Listing Location:</Form.Label>
@@ -175,7 +177,7 @@ render () {
                     <Form.Control 
                     type="number" 
                     name="minLeaseByMonth"
-                    placeholder="February 11th, 2020"
+                    placeholder="1"
                     onChange={this.handleInputChange} 
                     value={this.state.minLeaseByMonth} />
                 </Form.Group>
@@ -207,12 +209,12 @@ render () {
                     value={this.state.propertyDetails} />
                 </Form.Group>
                     <Button variant="primary" type="submit"
-                    disabled={!(this.state.location)}
+                    disabled={!(this.state.userName)}
                     onClick={this.postListing}>
                         Make Listing Public
                      </Button>
                      <Button variant="primary" type="submit"
-                    disabled={!(this.state.location)}
+                    disabled={!(this.state.userName)}
                     onClick={this.addListing}>
                         Save Listing to Profile
                      </Button>
