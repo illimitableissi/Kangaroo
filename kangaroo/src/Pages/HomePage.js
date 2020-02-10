@@ -1,7 +1,10 @@
 import React from 'react';
 import Jumbotron from '../Components/Jumbotron';
 import Parallax from '../Components/Parallax';
-import { Container, Row, Column } from '../Components/Grid';
+// import { Container, Row, Column } from '../Components/Grid';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Card from '../Components/Card';
 import Images from '../Components/Images';
 import Nav from '../Components/Nav';
@@ -99,7 +102,7 @@ class HomePage extends React.Component {
 							<Form.Control
 								type='text'
 								name='name'
-								placeholder='John J.'
+								placeholder='John Doe'
 								onChange={this.handleInputChange}
 								value={this.state.name}
 							/>
@@ -109,7 +112,7 @@ class HomePage extends React.Component {
 							<Form.Control
 								type='text'
 								name='userName'
-								placeholder='johnj3'
+								placeholder='jdoe123'
 								onChange={this.handleInputChange}
 								value={this.state.userName}
 							/>
@@ -117,7 +120,7 @@ class HomePage extends React.Component {
 						<Form.Group controlId='password'>
 							<Form.Label>Password:</Form.Label>
 							<Form.Control
-								type='text'
+								type='password'
 								name='password'
 								onChange={this.handleInputChange}
 								value={this.state.password}
@@ -155,7 +158,7 @@ class HomePage extends React.Component {
 							title='Want to sublease your place?'
 							message="First, you'll need to register a free account with us. Simply click the 'Register' button (or 'Login' if you already have an account), log in, and start posting!"
 							img='/images/box.PNG'
-							aos='fade-right'
+							aos='zoom-in'
 						/>
 					</Container>
 				</Parallax>
