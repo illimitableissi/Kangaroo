@@ -140,20 +140,20 @@ class HomePage extends React.Component {
 					<Container>
 						<br />
 						<Card
-							title='Title 1'
-							message='message 1'
+							title='What is Kangaroo?'
+							message='Kangaroo is a subleasing website that allows users to post and search for available subleasing agreements.'
 							img='/images/lease.PNG'
 							aos='fade-right'
 						/>
 						<Card
-							title='Title 2'
-							message='message 2'
+							title='Want to find a place to live?'
+							message='Just click the "Search for Lease" button to get started. From there, you can filter results by location, price, and more.'
 							img='/images/packing.PNG'
 							aos='fade-left'
 						/>
 						<Card
-							title='Title 3'
-							message='message 3'
+							title='Want to sublease your place?'
+							message="First, you'll need to register a free account with us. Simply click the 'Register' button (or 'Login' if you already have an account), log in, and start posting!"
 							img='/images/box.PNG'
 							aos='fade-right'
 						/>
