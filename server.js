@@ -30,14 +30,6 @@ app.use(passport.initialize());
 // Passport config
 require('./config/passport')(passport);
 
-// if (process.env.NODE_ENV === 'production') {
-// 	app.use(express.static('client/build'));
-// }
-
-// app.get('*', function(req, res) {
-// 	res.sendFile(path.join(__dirname, './kangaroo/build/index.html'));
-// });
-
 // Routes
 app.use(routes);
 app.use('/api/users', users);
@@ -52,5 +44,5 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
-const port = process.env.PORT || 5000; // process.env.port is Heroku's port if you choose to deploy the app there
+const port = process.env.PORT || 5000; // process.env.port is Heroku's port
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
