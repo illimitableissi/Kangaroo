@@ -210,7 +210,6 @@ class Search extends React.Component {
 						{this.state.listings.map(listing => {
 							return (
 								<SearchResults
-									image={listing.image}
 									location={listing.location}
 									price={listing.price}
 									rooms={listing.rooms}
