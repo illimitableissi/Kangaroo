@@ -3,6 +3,7 @@ import API from '../utils/API'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
+import '../Components/details.css'
 
 class UserListing extends React.Component{
 
@@ -96,7 +97,7 @@ render () {
     return (
         <div>
             <a href={"/user/" + this.state.savedListing._id} role="button" className="btn btn-danger">Go Back</a>
-            <Container>
+            <Container className="formContainer">
                  <Form>
                  <Form.Group controlId="userName">
                   <Form.Label>Username for Listing:</Form.Label>
@@ -104,7 +105,6 @@ render () {
                     // type="text" 
                     name="userName"
                     placeholder={this.state.savedListing.userName} 
-                    // defaultValue={this.state.savedListing.userName} 
                     onChange={this.handleInputChange} 
                     value={this.state.userName}
                     />

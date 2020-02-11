@@ -37,7 +37,7 @@ class YourPage extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="userBody">
 				<Nav />
 				<h2>Welcome, {this.state.user.name}!</h2>
 				<a className='btn btn-danger' href='/'>
