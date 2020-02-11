@@ -180,54 +180,50 @@ class Search extends React.Component {
 				</MyVerticallyCenteredModal>
 				<Parallax>
 					<Nav />
-					<Container>
-						<Row>
-							<Col>
-								<SearchForm
-									handleChange={e => {
-										if (e.target.value) {
-											this.filter(e.target.value);
-										} else {
-											this.loadListings();
-										}
+					<Row>
+						<Col>
+							<SearchForm
+								handleChange={e => {
+									if (e.target.value) {
+										this.filter(e.target.value);
+									} else {
+										this.loadListings();
+									}
+								}}
+								handleInput={e => {
+									if (e.target.value) {
+										this.findPrice(e.target.value);
+									} else {
+										this.loadListings();
+									}
+								}}
+							>
+								<option></option>
+								{this.state.filters.map(listing => (
+									<option>{listing.location}</option>
+								))}
+								;
+							</SearchForm>
+						</Col>
+					</Row>
+					<Row>
+						{this.state.listings.map(listing => {
+							return (
+								<SearchResults
+									image={listing.image}
+									location={listing.location}
+									price={listing.price}
+									rooms={listing.rooms}
+									sqft={listing.sqft}
+									moveIn={listing.dateAvailable}
+									link={'/listing/' + listing._id}
+									onClick={() => {
+										this.openModal(listing);
 									}}
-									handleInput={e => {
-										if (e.target.value) {
-											this.findPrice(e.target.value);
-										} else {
-											this.loadListings();
-										}
-									}}
-								>
-									<option></option>
-									{this.state.filters.map(listing => (
-										<option>{listing.location}</option>
-									))}
-									;
-								</SearchForm>
-							</Col>
-						</Row>
-						<Row>
-							<Col>
-								{this.state.listings.map(listing => {
-									return (
-										<SearchResults
-											image={listing.image}
-											location={listing.location}
-											price={listing.price}
-											rooms={listing.rooms}
-											sqft={listing.sqft}
-											moveIn={listing.dateAvailable}
-											link={'/listing/' + listing._id}
-											onClick={() => {
-												this.openModal(listing);
-											}}
-										/>
-									);
-								})}
-							</Col>
-						</Row>
-					</Container>
+								/>
+							);
+						})}
+					</Row>
 				</Parallax>
 			</div>
 		);
