@@ -3,6 +3,7 @@ import Nav from '../Components/Nav'
 import API from '../utils/API';
 import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
+import '../Components/details.css'
 
 class ListingDetail extends React.Component {
     state = {
@@ -17,9 +18,9 @@ class ListingDetail extends React.Component {
     
       render () {
           return (
-            <div>
+            <div className="listingBody">
                 <Nav />
-                <a href="/search" role="button" className="btn btn-danger">Go Back</a>
+
                 <Carousel>
                 <Carousel.Item>
                         <img
@@ -57,24 +58,25 @@ class ListingDetail extends React.Component {
                         />
                      </Carousel.Item>
                 </Carousel>
-                <Card className="bg-dark text-center">
-                    <Card.Img src="/images/gray.jpg" alt="Card image" />
+                <Card className="bg-dark text-center" data-aos="zoom-in">
+                    <Card.Img src="/images/gray.jpg" alt="Card image" className="cardImage" />
                         <Card.ImgOverlay>
                             <Card.Title>Property Information</Card.Title>
-                                <Card.Text>
-                                    <p>Location: {this.state.listing.location}</p>
-                                    <p>Price: {this.state.listing.price}</p>
-                                    <p>Rooms: {this.state.listing.rooms}</p>
-                                    <p>Sqft: {this.state.listing.sqft}</p>
-                                    <p>Available Move in Date: {this.state.listing.dateAvailable}</p>
-                                    <p>Minimum Lease by Month: {this.state.listing.minLeaseByMonth}</p>
-                                    <p>Price Negotiable: {this.state.listing.negotiable}</p>
-                                    <p>Pet Friendly: {this.state.listing.petFriendly}</p>
-                                    <p>Address: {this.state.listing.address}</p>
-                                    <p>Property Details: {this.state.listing.propertyDetails}</p>
+                                <Card.Text data-aos="fade-right" data-aos-duration="2000">
+                                    <p><b>Location:</b> {this.state.listing.location}</p>
+                                    <p><b>Price:</b>  {this.state.listing.price}</p>
+                                    <p><b>Rooms:</b>  {this.state.listing.rooms}</p>
+                                    <p><b>Sqft:</b>  {this.state.listing.sqft}</p>
+                                    <p><b>Available Move in Date:</b>  {this.state.listing.dateAvailable}</p>
+                                    <p><b>Minimum Lease by Month:</b>  {this.state.listing.minLeaseByMonth}</p>
+                                    <p><b>Price Negotiable:</b>  {this.state.listing.negotiable}</p>
+                                    <p><b>Pet Friendly:</b>  {this.state.listing.petFriendly}</p>
+                                    <p><b>Address:</b>  {this.state.listing.address}</p>
+                                    <p><b>Property Details:</b>  {this.state.listing.propertyDetails}</p>
                                 </Card.Text>
                         </Card.ImgOverlay>
-                </Card>                     
+                </Card>
+                <a href="/search" role="button" className="btn btn-danger">Go Back</a>                     
             </div>  
         );
       }

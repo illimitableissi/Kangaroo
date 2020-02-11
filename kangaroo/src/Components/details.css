@@ -1,0 +1,25 @@
+.d-block {
+height: 550px;
+}
+
+.listingBody {
+    background-color: wheat;
+}
+
+.cardImage{
+    height:600px
+}
+
+body {
+    background-color: teal;
+}
+
+h2 {
+    font-family: 'Bungee Shade', cursive;
+    color: white;
+}
+
+h3 {
+    font-family: 'Saira Stencil One', cursive;
+}
+
