@@ -181,35 +181,38 @@ class Search extends React.Component {
 				<Parallax>
 					<Nav />
 					<Container fluid>
-					<Row>
-						<Col xs md>
-							<SearchForm
-								handleChange={e => {
-									if (e.target.value) {
-										this.filter(e.target.value);
-									} else {
-										this.loadListings();
-									}
-								}}
-								handleInput={e => {
-									if (e.target.value) {
-										this.findPrice(e.target.value);
-									} else {
-										this.loadListings();
-									}
-								}}
-							>
-								<option></option>
-								{this.state.filters.map(listing => (
-									<option>{listing.location}</option>
-								))}
-								;
-							</SearchForm>
-						</Col>
+						<Row>
+							<Col xs md>
+								<SearchForm
+									handleChange={e => {
+										if (e.target.value) {
+											this.filter(e.target.value);
+										} else {
+											this.loadListings();
+										}
+									}}
+									handleInput={e => {
+										if (e.target.value) {
+											this.findPrice(e.target.value);
+										} else {
+											this.loadListings();
+										}
+									}}
+								>
+									<option></option>
+									{this.state.filters.map(listing => (
+										<option>{listing.location}</option>
+									))}
+									;
+								</SearchForm>
+							</Col>
 							<Col xs={12} md={7}>
 								{this.state.listings.map(listing => {
 									return (
 										<SearchResults
+											key={listing._id}
+											id={listing._id}
+											image={listing.image}
 											location={listing.location}
 											price={listing.price}
 											rooms={listing.rooms}
