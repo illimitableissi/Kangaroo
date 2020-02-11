@@ -6,7 +6,7 @@ import Nav from '../Components/Nav';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import '../Components/details.css'
+import '../Components/details.css';
 
 function pullListingsByUsername(userName) {
 	return API.getUserName(userName);
@@ -39,7 +39,7 @@ class YourPage extends React.Component {
 		return (
 			<div>
 				<Nav />
-				<h2>Welcome {this.state.user.name}!</h2>
+				<h2>Welcome, {this.state.user.name}!</h2>
 				<a className='btn btn-danger' href='/'>
 					Logout
 				</a>
@@ -50,54 +50,56 @@ class YourPage extends React.Component {
 					Create Listing
 				</a>
 				<br></br>
-				<Container fluid className="pageC">
+				<Container fluid className='pageC'>
 					<Row>
 						<Col>
-						<Container fluid className="text-center">
-							<h3>Your Listing Interests:</h3>
-							{this.state.listings.map(listing => (
-								<Card>
-									<Card.Header>Listing Id: {listing._id}</Card.Header>
-									{listing.messages.map(message => (
-										<Card.Body>
-											<Card.Text>Name: {message.fullName}</Card.Text>
-											<Card.Text>Email: {message.email}</Card.Text>
-											<Card.Text>Phone Number: {message.phoneNumber}</Card.Text>
-										</Card.Body>
-									))}
-								</Card>
-							))}
+							<Container fluid className='text-center'>
+								<h3>Your Listing Interests:</h3>
+								{this.state.listings.map(listing => (
+									<Card>
+										<Card.Header>Listing Id: {listing._id}</Card.Header>
+										{listing.messages.map(message => (
+											<Card.Body>
+												<Card.Text>Name: {message.fullName}</Card.Text>
+												<Card.Text>Email: {message.email}</Card.Text>
+												<Card.Text>
+													Phone Number: {message.phoneNumber}
+												</Card.Text>
+											</Card.Body>
+										))}
+									</Card>
+								))}
 							</Container>
 						</Col>
 						<Col xs md={8}>
-						<Container fluid className="text-center">
-							<h3>Your Listings:</h3>
-							{this.state.listings.map(listing => (
-								<Card>
-									<Card.Header>Listing Id: {listing._id}</Card.Header>
-									<Card.Body>
-										<Card.Text>Location: {listing.location}</Card.Text>
-										<Card.Text>Price: {listing.price}</Card.Text>
-										<Card.Text>Rooms: {listing.rooms}</Card.Text>
-										<Card.Text>Sqft: {listing.sqft}</Card.Text>
-										<Card.Text>Negotiable: {listing.negotiable}</Card.Text>
-										<Card.Text>Pet Friendly: {listing.petFriendly}</Card.Text>
-										<Card.Text>
-											Date Available: {listing.dateAvailable}
-										</Card.Text>
-										<Card.Text>
-											Minimum Lease: {listing.minLeaseByMonth}
-										</Card.Text>
-										<Card.Text>Address: {listing.adress}</Card.Text>
-										<Button
-											variant='danger'
-											onClick={() => this.deleteListing(listing._id)}
-										>
-											Delete Listing
-										</Button>
-									</Card.Body>
-								</Card>
-							))}
+							<Container fluid className='text-center'>
+								<h3>Your Listings:</h3>
+								{this.state.listings.map(listing => (
+									<Card>
+										<Card.Header>Listing Id: {listing._id}</Card.Header>
+										<Card.Body>
+											<Card.Text>Location: {listing.location}</Card.Text>
+											<Card.Text>Price: {listing.price}</Card.Text>
+											<Card.Text>Rooms: {listing.rooms}</Card.Text>
+											<Card.Text>Sqft: {listing.sqft}</Card.Text>
+											<Card.Text>Negotiable: {listing.negotiable}</Card.Text>
+											<Card.Text>Pet Friendly: {listing.petFriendly}</Card.Text>
+											<Card.Text>
+												Date Available: {listing.dateAvailable}
+											</Card.Text>
+											<Card.Text>
+												Minimum Lease: {listing.minLeaseByMonth}
+											</Card.Text>
+											<Card.Text>Address: {listing.adress}</Card.Text>
+											<Button
+												variant='danger'
+												onClick={() => this.deleteListing(listing._id)}
+											>
+												Delete Listing
+											</Button>
+										</Card.Body>
+									</Card>
+								))}
 							</Container>
 						</Col>
 					</Row>

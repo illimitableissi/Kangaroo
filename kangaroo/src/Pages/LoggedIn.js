@@ -75,7 +75,7 @@ class LoggedIn extends React.Component {
 								<Form.Group controlId='password'>
 									<Form.Label>Password</Form.Label>
 									<Form.Control
-										type='text'
+										type='password'
 										name='password'
 										onChange={this.handleInputChange}
 										value={this.state.password}

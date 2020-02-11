@@ -138,6 +138,7 @@ class HomePage extends React.Component {
 						</Button>
 					</Form>
 				</MyVerticallyCenteredModal>
+				<Nav />
 				<Parallax>
 					<Jumbotron onClick={this.openModal} />
 					<Container>
