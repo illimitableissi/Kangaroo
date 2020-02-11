@@ -2,9 +2,9 @@ import React from 'react';
 
 const SearchResults = props => {
 	return (
-		<div className='card w-25 border-success mb-3'>
-			<img src="/images/stockapartment.jpg" class='card-img-top' alt='...' />
-			<div className='card-body text-success'>
+		<div className='card border-success mb-3'>
+			<img src='/images/stockapartment.jpg' class='card-img-top' alt='...' />
+			<div className='card-body text-success text-center'>
 				<div data-aos='fade-left'>
 					<h5 className='card-title'>Location: {props.location}</h5>
 					<p className='card-text'>Price: ${props.price}</p>

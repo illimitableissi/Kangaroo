@@ -128,7 +128,7 @@ class Search extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div style={{ width: '100%' }}>
 				<MyVerticallyCenteredModal
 					show={this.state.show}
 					onClick={this.closeModal}
@@ -206,23 +206,27 @@ class Search extends React.Component {
 							</SearchForm>
 						</Col>
 					</Row>
-					<Row>
-						{this.state.listings.map(listing => {
-							return (
-								<SearchResults
-									location={listing.location}
-									price={listing.price}
-									rooms={listing.rooms}
-									sqft={listing.sqft}
-									moveIn={listing.dateAvailable}
-									link={'/listing/' + listing._id}
-									onClick={() => {
-										this.openModal(listing);
-									}}
-								/>
-							);
-						})}
-					</Row>
+					<Container>
+						<Row>
+							<Col>
+								{this.state.listings.map(listing => {
+									return (
+										<SearchResults
+											location={listing.location}
+											price={listing.price}
+											rooms={listing.rooms}
+											sqft={listing.sqft}
+											moveIn={listing.dateAvailable}
+											link={'/listing/' + listing._id}
+											onClick={() => {
+												this.openModal(listing);
+											}}
+										/>
+									);
+								})}
+							</Col>
+						</Row>
+					</Container>
 				</Parallax>
 			</div>
 		);
