@@ -180,8 +180,9 @@ class Search extends React.Component {
 				</MyVerticallyCenteredModal>
 				<Parallax>
 					<Nav />
+					<Container fluid>
 					<Row>
-						<Col>
+						<Col xs md>
 							<SearchForm
 								handleChange={e => {
 									if (e.target.value) {
@@ -205,10 +206,7 @@ class Search extends React.Component {
 								;
 							</SearchForm>
 						</Col>
-					</Row>
-					<Container>
-						<Row>
-							<Col>
+							<Col xs={12} md={7}>
 								{this.state.listings.map(listing => {
 									return (
 										<SearchResults

@@ -10,8 +10,9 @@ height: 550px;
     height:600px
 }
 
-body {
+.userBody {
     background-color: teal;
+    height: 100%;
 }
 
 h2 {
