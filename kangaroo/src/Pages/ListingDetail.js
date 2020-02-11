@@ -71,7 +71,7 @@ class ListingDetail extends React.Component {
 						<Card.Text
 							data-aos='fade-right'
 							data-aos-duration='2000'
-							style={{ fontSize: 16 }}
+							style={{ fontSize: 20 }}
 						>
 							<p>
 								<b>Location:</b> {this.state.listing.location}
