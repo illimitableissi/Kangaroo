@@ -4,6 +4,13 @@
 
 - Kangaroo is a platfrom through which users can find existing leases for living accomodations and adopt them. It brings together leaseholders or landlords and those looking for somewhere to stay for at least 2 months in the Metro Atlanta area. Simply search for a place using different criteria (leasers), or list a place whose lease is up for grabs (leaseholders).
 
+
+### Developers
+
+- Isimemen Inegbedion | https://github.com/illimitableissi
+- Colin Green | https://github.com/colin-green
+- Andrew Fowose | https://github.com/usafowose
+
 ## Heroku Deployment
 
 - https://kangarooleasing.herokuapp.com/
